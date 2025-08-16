@@ -200,7 +200,32 @@ header .subtitle {
   backdrop-filter: blur(6px);
   background-color: rgba(241,242,242,.85); /* 與你的背景色接近 */
 }
-/* 文章頁封面圖：等比縮小，不裁切 */
+/* 1) 全站改成 border-box，padding 不再把寬度撐爆 */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* 2) 讓版心在小螢幕不超出寬度 */
+body {
+  /* 原本就有 max-width: 826px; 這裡用 min() 更安全 */
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 手機縮小左右邊距，視覺更舒服 */
+@media (max-width: 640px) {
+  body { padding: 1rem; }
+}
+
+/* 3) 防止任何媒體元素超出容器寬度 */
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+
+/* 4) 文章頁封面固定高度 + 裁切（避免寬度溢出） */
 .post-hero { margin: 1rem 0 1.25rem; border-radius: 10px; overflow: hidden; }
-.post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.post-hero img { width: 100%; height: 280px; object-fit: cover; }
+@media (max-width: 640px) { .post-hero img { height: 200px; } }
+
+/* 5) 文字/程式碼太長也不會撐出橫向捲軸 */
+pre, code { white-space: pre-wrap; word-break: break-word; }
+
 
