@@ -11,15 +11,15 @@ image_caption:
 What I learned in the Biomedical Regulatory Affairs Program: IND, Investigational New Drug
 
 
-##So, what is an IND?
+## So, what is an IND?
 1. IND stands for Investigational New Drug. It’s a formal request to the FDA for authorization to start clinical trials in humans.
 2. It’s regulated under 21 CFR 312.
 3. You’ll need an IND for any study involving a drug or biologic in humans for therapeutic use
 
-##Okay, I’m going to file an IND. But when exactly?
+## Okay, I’m going to file an IND. But when exactly?
 Short answer: After preclinical studies, before you initiate your investigation on first human subject
 
-##Do I Qualify for an IND Exemption?
+## Do I Qualify for an IND Exemption?
 Filing an IND can be a tedious process, I totally understand. But if your clinical investigation uses **a marketed drug in the US**, there’s a good chance you may be exempt from submitting an IND, if the following criteria are all met:
 
 You do **not** intend to:
@@ -35,7 +35,7 @@ And your investigation **must**:
 - Comply with the FDA’s rules against promotion of investigational drugs (21 CFR 312.7).
 *→ In other words, if your investigation is for academic or non-commercial research, and it does not involve any changes to the indication, dosage, route of administration, or target population, and does not introduce additional risk, you may qualify for an IND exemption.*
 
-##I think my case is exempt from IND, now what?
+## I think my case is exempt from IND, now what?
 Generally, the sponsor can assess whether their study qualifies for an IND exemption.
 
 Some guidance may help with the assessment, for example:
@@ -47,17 +47,17 @@ If you determine that your study meets the exemption criteria, you may proceed w
 
 However, if you’re unsure, **ASK!!**
 
-###Consult the FDA through either a formal or informal route:
+### Consult the FDA through either a formal or informal route:
 
 - **Formal**: file an IND but with a request of IND waiver. If the FDA agrees with your exemption request, they will issue an official exemption letter.
 - **Informal**: Reach out via email, phone, or during a pre-IND meeting. These interactions provide non-binding feedback—helpful but not definite.
 
-###Consult the IRB:
+### Consult the IRB:
 
 - All human studies must be reviewed by an IRB, regardless of IND exemption status.
 - The IRB can assist in evaluating exemption eligibility, but only the FDA has the final authority.
 
-###Not just any IND, you have to submit the right type:
+### Not just any IND, you have to submit the right type:
 
 **Commercial IND**
 - Your ultimate goal is to get FDA marketing approval for a new drug. This IND supports a NDA or BLA submission.
@@ -68,7 +68,7 @@ However, if you’re unsure, **ASK!!**
 - For patients with serious or life-threatening conditions with out approved treatment options, an expanded access IND could make a new but unapproved drug available to them.
 - It generally is submitted by the physician.
 
-##What to submit? let me introduce you “IND package”
+## What to submit? let me introduce you “IND package”
 - FDA 1571: the main document of IND
 - General Investigational Plan
 - Investigator’s Brochure (IB)
@@ -85,8 +85,8 @@ However, if you’re unsure, **ASK!!**
   – Commercial IND → not required at submission, but often collected later for inspection
   – Non-commercial IND → required to initiate the IND
 
-##IND format
-###eCTD
+## IND format
+### eCTD
 - Stands for: Electronic Common Technical Document
 - Purpose: Standardizes submission format across ICH (International Council for Harmonization of Technical Requirements for Pharmaceuticals for Human Use) regions to improve consistency and reduce FDA review burden
   – Original ICH members: US, EU, Japan
@@ -98,11 +98,11 @@ However, if you’re unsure, **ASK!!**
   – For IND submission, only a few sections of eCTD are needed
   – For NDA/BLA, all modules must be complete
 
-###Traditional Format
+### Traditional Format
 - Paper-based or scanned PDF format
 - Only available to non-commercial INDs (no drug-approval intention)
 
-##eCTD Module Overview
+## eCTD Module Overview
 - **Module 1**:Administrative and regional documents (not technically part of “eCTD” core)
 Includes: FDA Form 1571, General Investigational Plan, Investigator’s Brochure (IB), Label, Environmental Assessment, Form 3674, Form 1572
 - **Module 2**: Overviews and summaries
