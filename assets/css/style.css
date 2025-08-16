@@ -200,3 +200,6 @@ header .subtitle {
   backdrop-filter: blur(6px);
   background-color: rgba(241,242,242,.85); /* 與你的背景色接近 */
 }
+.post-hero { margin: 1rem 0 1.25rem; text-align: center; }
+.post-hero img { width: 100%; height: auto; border-radius: 10px; }
+.post-hero__cap { color:#999; font-size:.9rem; margin-top:.25rem; }
