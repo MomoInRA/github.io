@@ -7,7 +7,7 @@ title: "Momo in RA"
 <ul>
   {% for post in paginator.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       <p>{{ post.excerpt }}</p>
     </li>
   {% endfor %}
@@ -15,9 +15,9 @@ title: "Momo in RA"
 
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">← 上一頁</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}">← 上一頁</a>
   {% endif %}
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">下一頁 →</a>
+    <a href="{{ paginator.next_page_path | relative_url }}">下一頁 →</a>
   {% endif %}
 </div>
