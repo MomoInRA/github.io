@@ -122,4 +122,22 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid #ccc; }
 /* =================================================================== */
 
+/* NAV：加厚 + Sticky 往下留距 */
+.navbar{
+  top: 14px;              /* 原本 0 → 往下留 14px，可改 10~24 視覺喜好 */
+  padding: .5rem 0;       /* 導覽列本身也加一點上下留白 */
+}
+
+/* 連結更厚、更有存在感 */
+.navbar a{
+  padding: .7rem .9rem .9rem;  /* 上 .7 / 右 .9 / 下 .9 */
+  font-weight: 700;            /* 粗一點 */
+}
+
+/* 小圓點位置略下移、放大 1px（配合加厚） */
+.navbar a::after{
+  bottom: -8px;   /* 原 -6px → -8px，看起來更居中 */
+  width: 7px;
+  height: 7px;
+}
 
