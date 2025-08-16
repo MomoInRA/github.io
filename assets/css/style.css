@@ -248,13 +248,13 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
 
 /* 文章內 H2 左側細線版本 */
 .post h2{
-  border-left: 3px solid var(--heading-color); /* 原本 6px → 改 3px */
-  padding-left: .4rem;                          /* 配合縮小，縮一點內距 */
+  border-left: 4px solid rgba(35,59,94,.7); /* #233B5E 的 70% 不透明 */
+  padding-left: .4rem;
 }
 
 /* 手機再細一點（可選） */
 @media (max-width: 640px){
-  .post h2{ border-left-width: 2px; padding-left: .35rem; }
+  .post h2{ border-left-width: 4px; padding-left: .35rem; }
 }
 
 
