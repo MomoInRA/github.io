@@ -4,9 +4,9 @@ title: "Your Clinical Trial Starts Here: IND Basics for Beginners"
 date: 2025-07-09
 categories: [法規]
 tags: [法規, 新手]
-image: /assets/images/hello-world.jpg   
+image: /assets/images/FDA.jpeg  
 image_alt: 這張圖在說明什麼
-image_caption: 小小圖說（可留白）
+image_caption: 
 ---
 What I learned in the Biomedical Regulatory Affairs Program: IND, Investigational New Drug
 
