@@ -1,8 +1,23 @@
 ---
-layout: home
-title: Momo in RA
+layout: default
+title: "Momo in RA"
 ---
 
-法規初心者 Regulatory newbie  
-紀錄我與法規的日常搏鬥。求同行一起在 RA 黑森林裡組隊打怪！ ✨  
+<h1>最新文章</h1>
+<ul>
+  {% for post in paginator.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
 
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">← 上一頁</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">下一頁 →</a>
+  {% endif %}
+</div>
