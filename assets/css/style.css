@@ -97,3 +97,43 @@ header .subtitle {
   background-color: #C14420;
   color: white;
 }
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.post-thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.post-info {
+  flex: 1;
+}
+
+.post-info a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #C14420;
+  text-decoration: none;
+}
+
+.post-info a:hover {
+  text-decoration: underline;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #999;
+}
+
