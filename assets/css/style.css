@@ -79,3 +79,7 @@ header .subtitle {
   background-color: #C14420;
   color: white;
 }
+.navbar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
