@@ -235,3 +235,23 @@ pre, code { white-space: pre-wrap; word-break: break-word; }
 .tax-list a:hover { background:#C14420; color:#fff; }
 .tax-list .count { font-size:.85rem; color:#999; }
 
+/* === 標題配色：靛藍 === */
+:root{
+  --heading-color: #233B5E;   /* 你要的顏色 */
+}
+
+/* 全站所有標題用靛藍 */
+h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
+
+/* 只想改「文章內」標題就改用這行（把上一行註解掉） */
+/* .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { color: var(--heading-color); } */
+
+/*（可選）H2 加左側色條，層次更清楚 */
+.post h2{
+  border-left: 6px solid var(--heading-color);
+  padding-left: .5rem;
+}
+
+/*（可選）首頁大標也套同色 */
+header h1, header h1 a { color: var(--heading-color); }
+
