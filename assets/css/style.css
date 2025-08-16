@@ -2,7 +2,7 @@
 /* 變數集中設定 */
 :root{
   --color-background: #F1F2F2;
-  --color-foreground: #C14420;      /* 內文本色（你之前的主色） */
+  --color-foreground: #C14420;      /* 內文本色 */
   --font-main: 'Work Sans', sans-serif;
   --content-width: 826px;
 
@@ -10,7 +10,7 @@
   --accent: #C14420;                /* 強調／active 色 */
   --link: #007cba;                  /* 連結色 */
 
-  /* 泡泡按鈕（淡靛藍，不是灰色） */
+  /* 分類 tag 用到的柔色膠囊（保留給 tax-list 使用） */
   --pill-bg: #EAF0F8;
   --pill-bg-hover: #DCE7F3;
   --pill-border: #C8D7EE;
@@ -56,7 +56,7 @@ header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
 /* 不要 header/nav 的預設底線，避免雙底線 */
 header a:hover, .navbar a:hover { text-decoration: none; }
 
-/* 導覽列（泡泡樣式） */
+/* 導覽列（小圓點指示版本） */
 .navbar{
   position: sticky; top: 0; z-index: 100;
   backdrop-filter: blur(6px);
@@ -65,26 +65,25 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 }
 .navbar ul{
   list-style:none; padding:0; margin:1rem 0 2rem;
-  display:flex; flex-wrap:wrap; gap:.5rem 1rem; justify-content:center;
+  display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; justify-content:center;
 }
 .navbar li{ list-style:none; }
 .navbar a{
-  display:inline-block; padding:.55rem 1rem; border-radius:999px; font-weight:600;
+  background:none; border:none; border-radius:0; box-shadow:none;
   color: var(--heading-color);
-  background: var(--pill-bg);
-  border:1px solid var(--pill-border);
-  transition: background-color .25s, color .25s, border-color .25s, box-shadow .25s, transform .15s;
+  padding:.45rem .7rem .6rem;
+  position:relative; text-decoration:none; transition: color .2s ease;
 }
-.navbar a:hover{
-  background: var(--pill-bg-hover); color: var(--heading-color);
-  border-color: var(--pill-border-hover);
-  box-shadow: 0 6px 14px rgba(35,59,94,.12);
-  transform: translateY(-1px);
+.navbar a::after{
+  content:""; position:absolute; left:50%; bottom:-6px; width:6px; height:6px;
+  background: currentColor; border-radius:50%;
+  transform: translateX(-50%) scale(0);
+  transition: transform .2s ease;
 }
-.navbar a.active{
-  background: var(--accent); color:#fff; border-color: transparent;
-  box-shadow: 0 8px 18px rgba(193,68,32,.22);
-}
+.navbar a:hover{ color: var(--accent); }
+.navbar a:hover::after{ transform: translateX(-50%) scale(1); }
+.navbar a.active{ color: var(--accent); }
+.navbar a.active::after{ transform: translateX(-50%) scale(1); }
 .navbar a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 
 /* 文章列表（含縮圖） */
@@ -112,7 +111,7 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 .post h2{ border-left: 2px solid rgba(35,59,94,.7); padding-left:.4rem; }
 @media (max-width:640px){ .post h2{ border-left-width:2px; padding-left:.35rem; } }
 
-/* 分類索引 */
+/* 分類索引（沿用柔色膠囊） */
 .tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
 .tax-list li { display:flex; align-items:center; gap:.4rem; }
 .tax-list a { background: var(--pill-bg); color: var(--heading-color); border-radius:999px; padding:.4rem .9rem; text-decoration:none; border:1px solid var(--pill-border); }
@@ -122,18 +121,3 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 /* footer */
 footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid #ccc; }
 /* =================================================================== */
-
-/* NAV • Bottom tabs */
-.navbar a{
-  background:none; border:none; border-bottom:2px solid transparent;
-  color: var(--heading-color);
-  padding:.5rem .75rem .45rem;
-  text-decoration:none; transition: color .2s, border-color .2s;
-}
-.navbar a:hover{
-  border-bottom-color: rgba(35,59,94,.35); /* 靛藍淡色 */
-}
-.navbar a.active{
-  color: var(--accent);
-  border-bottom-color: var(--accent);      /* 主色實線 */
-}
