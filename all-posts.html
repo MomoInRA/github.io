@@ -10,7 +10,7 @@ title: 文章類別
     {% assign name = c[0] %}
     {% assign count = c[1] | size %}
     <li>
-      <a href="{{ '/category/' | append: name | url_encode | relative_url }}">{{ name }}</a>
+      <a href="{{ '/category/' | relative_url }}{{ name | slugify }}/">{{ name }}</a>
       <span class="count">{{ count }}</span>
     </li>
   {% endfor %}
