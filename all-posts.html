@@ -4,11 +4,16 @@ title: 所有文章
 ---
 
 <h2>📄 所有文章</h2>
-<ul>
+<ul class="post-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span style="color: #999;">（{{ post.date | date: "%Y-%m-%d" }}）</span>
+    <li class="post-item">
+      {% if post.image %}
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-thumb">
+      {% endif %}
+      <div class="post-info">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      </div>
     </li>
   {% endfor %}
 </ul>
