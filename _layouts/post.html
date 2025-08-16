@@ -1,22 +1,20 @@
 ---
 layout: default
 ---
-<article>
+<article class="post">
   <h1>{{ page.title }}</h1>
-  <p><em>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</em></p>
+  <p class="post-meta"><em>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</em></p>
 
   {% if page.image %}
+    {% assign hero_src = page.image | relative_url %}
     <figure class="post-hero">
-      <img
-        src="{{ site.baseurl }}{{ page.image }}"
-        alt="{{ page.image_alt | default: page.title }}">
+      <img src="{{ hero_src }}" alt="{{ page.image_alt | default: page.title }}">
       {% if page.image_caption %}
         <figcaption class="post-hero__cap">{{ page.image_caption }}</figcaption>
       {% endif %}
     </figure>
+    <!-- DEBUG hero="{{ page.image }}" hero_src="{{ hero_src }}" -->
   {% endif %}
 
   {{ content }}
 </article>
-
-<!-- 如果你有留言/其他元件，放在這下面 -->
