@@ -228,4 +228,10 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 /* 5) 文字/程式碼太長也不會撐出橫向捲軸 */
 pre, code { white-space: pre-wrap; word-break: break-word; }
 
+/* 分類索引樣式 */
+.tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
+.tax-list li { display:flex; align-items:center; gap:.4rem; }
+.tax-list a { background:#eee; color:#333; border-radius:999px; padding:.4rem .9rem; text-decoration:none; }
+.tax-list a:hover { background:#C14420; color:#fff; }
+.tax-list .count { font-size:.85rem; color:#999; }
 
