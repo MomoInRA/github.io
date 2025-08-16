@@ -413,6 +413,13 @@ header h1 a:hover::after{
   box-shadow: 0 8px 18px rgba(193,68,32,.22);
 }
 
+:root{
+  --pill-bg: #FCE9E2;          /* 預設底：淡橘 */
+  --pill-bg-hover: #FAD9CE;    /* 滑過底：再深一點 */
+  --pill-border: #F4C8B9;
+  --pill-border-hover: #E9B3A2;
+}
+
 /* 鍵盤可達性 */
 .navbar ul li a:focus-visible{
   outline: 2px solid var(--accent);
