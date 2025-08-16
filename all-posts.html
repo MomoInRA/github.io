@@ -1,28 +1,17 @@
 ---
 layout: default
-title: 所有文章
+title: 文章類別
 ---
 
-<h2>📄 所有文章</h2>
-
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li class="post-item">
-
-      {% if post.image %}
-        <img
-          src="{{ site.baseurl }}{{ post.image }}"
-          alt="{{ post.title }}"
-          class="post-thumb"
-          loading="lazy"
-          width="240" height="160">
-      {% endif %}
-
-      <div class="post-info">
-        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-      </div>
+<h2>📚 文章類別</h2>
+<ul class="tax-list">
+  {% assign cats = site.categories | sort %}
+  {% for c in cats %}
+    {% assign name = c[0] %}
+    {% assign count = c[1] | size %}
+    <li>
+      <a href="{{ '/category/' | append: name | url_encode | relative_url }}">{{ name }}</a>
+      <span class="count">{{ count }}</span>
     </li>
   {% endfor %}
 </ul>
