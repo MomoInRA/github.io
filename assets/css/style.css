@@ -200,6 +200,17 @@ header .subtitle {
   backdrop-filter: blur(6px);
   background-color: rgba(241,242,242,.85); /* 與你的背景色接近 */
 }
-.post-hero { margin: 1rem 0 1.25rem; text-align: center; }
-.post-hero img { width: 100%; height: auto; border-radius: 10px; }
-.post-hero__cap { color:#999; font-size:.9rem; margin-top:.25rem; }
+/* 文章頁封面圖：等比縮小，不裁切 */
+.post-hero { 
+  margin: 1rem 0 1.25rem; 
+  text-align: center; 
+}
+
+.post-hero img {
+  max-width: 100%;
+  height: auto;
+  max-height: 360px;     /* ← 統一最高高度 */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
