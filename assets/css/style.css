@@ -261,3 +261,79 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
 /*（可選）首頁大標也套同色 */
 header h1, header h1 a { color: var(--heading-color); }
 
+/* 主題色：你先前指定的靛藍 + 你的主色 */
+:root{
+  --heading-color: #233B5E;  /* 標題與導覽列文字色 */
+  --accent: #C14420;         /* 點擊/強調色 */
+}
+
+/* ========== Header 標題（Momo in RA）hover：漸現底線 + 變色 ========== */
+header h1 a{
+  position: relative;
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: color .25s ease;
+}
+header h1 a::after{
+  content:"";
+  position:absolute; left:0; bottom:-6px;
+  height:3px; width:100%;
+  background: linear-gradient(90deg, var(--heading-color), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  border-radius: 999px;
+}
+header h1 a:hover{
+  color: var(--accent);
+}
+header h1 a:hover::after{
+  transform: scaleX(1);
+}
+
+/* ========== 導覽列「泡泡」按鈕 hover：由淺到滿版填色 + 微浮起 ========== */
+.navbar ul{
+  display:flex; flex-wrap:wrap; gap:.5rem 1rem;
+  justify-content:center; padding:0; margin:1rem 0 2rem;
+}
+.navbar ul li{ list-style:none; }
+
+.navbar ul li a{
+  position: relative;
+  display: inline-block;
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--heading-color);
+  background: 
+    linear-gradient(90deg, var(--accent), var(--accent)) left / 0% 100% no-repeat, 
+    #ffffff;                                  /* 漸進填色：背景尺寸從 0% → 100% */
+  border: 1px solid rgba(35,59,94,.15);
+  transition: background-size .25s ease, color .25s ease,
+              border-color .25s ease, box-shadow .25s ease, transform .15s ease;
+}
+.navbar ul li a:hover{
+  background-size: 100% 100%;                /* 滑過時整顆填滿主色 */
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(193,68,32,.22); /* 淺淺的陰影 */
+  transform: translateY(-1px);               /* 微浮起 */
+}
+
+/* 目前頁（active）維持滿版 */
+.navbar ul li a.active{
+  background:
+    linear-gradient(90deg, var(--accent), var(--accent)) left / 100% 100% no-repeat,
+    #ffffff;
+  color:#fff; border-color: transparent;
+  box-shadow: 0 8px 18px rgba(193,68,32,.22);
+}
+
+/* 鍵盤可達性 */
+.navbar ul li a:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
