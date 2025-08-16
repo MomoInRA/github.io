@@ -1,6 +1,15 @@
-title: Momo in RA
-description: 法規初心者 Regulatory newbie，紀錄我與法規的日常搏鬥。求同行一起在 RA 黑森林裡組隊打怪！
-theme: minima
+title: "Momo in RA"
+description: "法規初心者 Regulatory newbie，紀錄我與法規的日常搏鬥。求同行一起在 RA 黑森林裡組隊打怪！"
 baseurl: ""
-url: "https://momoinra.github.io/github.io"
-author: Momo Ciwi
+url: "https://momoinra.github.io/.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+paginate: 5
+paginate_path: "/page:num"
+markdown: kramdown
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title.html
