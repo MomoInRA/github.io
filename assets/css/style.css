@@ -193,3 +193,10 @@ header .subtitle {
   background-color: #C14420;
   color: #fff;
 }
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  background-color: rgba(241,242,242,.85); /* 與你的背景色接近 */
+}
