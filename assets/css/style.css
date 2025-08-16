@@ -172,3 +172,12 @@ header .subtitle {
     height: 180px;
   }
 }
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-item { display: flex; align-items: center; gap: 1rem; margin: 1.25rem 0; }
+.post-thumb { width: 240px; height: 160px; object-fit: cover; border-radius: 10px; display: block; }
+.post-info { flex: 1; min-width: 0; }
+.post-title { margin: 0 0 .25rem; font-size: 1.2rem; line-height: 1.35; }
+.post-title a { color: #C14420; text-decoration: none; font-weight: 700; }
+.post-title a:hover { text-decoration: underline; }
+.post-date { display: inline-block; font-size: 0.9rem; color: #999; margin-bottom: .35rem; }
+
