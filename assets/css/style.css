@@ -59,3 +59,24 @@ header .subtitle {
   color: #666;
   margin-top: 0.5rem;
 }
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #007cba;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
