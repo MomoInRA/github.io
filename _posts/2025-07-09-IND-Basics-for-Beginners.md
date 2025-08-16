@@ -106,3 +106,6 @@ Module 5: Clinical study reports
 Includes: Protocol, Clinical Experience
 *M2=M3+M4+M5
 
+<p class="img-center">
+  <img src="{{ '/assets/images/eCTD.jpg' | relative_url }}" alt="eCTD module overview" width="640">
+</p>
