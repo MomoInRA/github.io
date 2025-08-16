@@ -414,11 +414,12 @@ header h1 a:hover::after{
 }
 
 :root{
-  --pill-bg: #FCE9E2;          /* 預設底：淡橘 */
-  --pill-bg-hover: #FAD9CE;    /* 滑過底：再深一點 */
-  --pill-border: #F4C8B9;
-  --pill-border-hover: #E9B3A2;
+  --pill-bg: #EAF0F8;          /* 預設底：淡靛藍 */
+  --pill-bg-hover: #DCE7F3;    /* 滑過底：再深一點 */
+  --pill-border: #C8D7EE;
+  --pill-border-hover: #A9C3E4;
 }
+
 
 /* 鍵盤可達性 */
 .navbar ul li a:focus-visible{
