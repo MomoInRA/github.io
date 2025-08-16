@@ -3,7 +3,7 @@ layout: default
 title: "Momo in RA"
 ---
 
-<h2>📝 最新文章</h2>
+<h2>What's new</h2>
 
 <ul class="post-list">
   {% for post in site.posts limit: 10 %}
