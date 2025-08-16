@@ -261,6 +261,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
 /*（可選）首頁大標也套同色 */
 header h1, header h1 a { color: var(--heading-color); }
 
+
 /* 主題色：你先前指定的靛藍 + 你的主色 */
 :root{
   --heading-color: #233B5E;  /* 標題與導覽列文字色 */
@@ -338,3 +339,82 @@ header h1 a:hover::after{
 /* 喜歡更低調？可把 hover 的漂浮與陰影調淡或關掉： */
 /* .navbar ul li a:hover{ transform:none; box-shadow:none; } */
 
+/* ==== 1) 關掉 Header / 導覽列的預設底線（避免雙底線） ==== */
+header a,
+header a:hover,
+.navbar a,
+.navbar a:hover {
+  text-decoration: none !important;
+}
+
+/* ==== 2) Header 標題 hover：保留單一漸現底線（不疊加） ==== */
+header h1 a{
+  position: relative;
+  color: var(--heading-color);
+  transition: color .25s ease;
+}
+header h1 a::after{
+  content:"";
+  position:absolute; left:0; bottom:-6px;
+  height:2px; width:100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  border-radius: 999px;
+}
+header h1 a:hover{
+  color: var(--accent);
+}
+header h1 a:hover::after{
+  transform: scaleX(1);
+}
+
+/* ==== 3) 導覽列泡泡：預設淡靛藍底，hover 稍微加深，不會變白 ==== */
+:root{
+  --heading-color: #233B5E;   /* 你的標題/主字色 */
+  --accent: #C14420;          /* 強調色（active 用） */
+  --pill-bg: rgba(35,59,94,.07);   /* 泡泡預設底（靛藍 7%） */
+  --pill-bg-hover: rgba(35,59,94,.16); /* hover 底（靛藍 16%） */
+  --pill-border: rgba(35,59,94,.18);
+  --pill-border-hover: rgba(35,59,94,.35);
+}
+
+.navbar ul{
+  display:flex; flex-wrap:wrap; gap:.5rem 1rem;
+  justify-content:center; padding:0; margin:1rem 0 2rem;
+}
+.navbar ul li{ list-style:none; }
+
+.navbar ul li a{
+  display:inline-block;
+  padding:.55rem 1rem;
+  border-radius:999px;
+  font-weight:600;
+  color: var(--heading-color);
+  background: var(--pill-bg);              /* ← 不再是白色 */
+  border:1px solid var(--pill-border);
+  transition: background-color .25s ease, color .25s ease,
+              border-color .25s ease, box-shadow .25s ease, transform .15s ease;
+}
+.navbar ul li a:hover{
+  background: var(--pill-bg-hover);        /* ← 淡淡加深 */
+  color: var(--heading-color);             /* 文字保持靛藍，不變白 */
+  border-color: var(--pill-border-hover);
+  box-shadow: 0 6px 14px rgba(35,59,94,.12);
+  transform: translateY(-1px);
+}
+
+/* 目前頁（active）：用重點色填滿，字白，清楚標示 */
+.navbar ul li a.active{
+  background: var(--accent);
+  color:#fff;
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(193,68,32,.22);
+}
+
+/* 鍵盤可達性 */
+.navbar ul li a:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
