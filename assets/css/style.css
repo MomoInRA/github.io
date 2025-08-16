@@ -335,5 +335,6 @@ header h1 a:hover::after{
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
-
+/* 喜歡更低調？可把 hover 的漂浮與陰影調淡或關掉： */
+/* .navbar ul li a:hover{ transform:none; box-shadow:none; } */
 
