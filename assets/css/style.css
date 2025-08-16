@@ -121,3 +121,30 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 /* footer */
 footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid #ccc; }
 /* =================================================================== */
+
+
+
+/* === 覆蓋：Nav 改成底線分頁籤 === */
+.navbar a{
+  background:none !important;
+  border:none !important;
+  border-bottom:2px solid transparent !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  color: var(--heading-color);
+  padding:.5rem .75rem .45rem;
+  text-decoration:none;
+  transition: color .2s, border-color .2s;
+}
+/* 移除小圓點指示 */
+.navbar a::after{ content:none !important; }
+
+.navbar a:hover{
+  color: var(--heading-color);
+  border-bottom-color: rgba(35,59,94,.35); /* 靛藍淡色 */
+}
+.navbar a.active{
+  color: var(--accent);
+  border-bottom-color: var(--accent);      /* 主色實線 */
+}
+.navbar a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
