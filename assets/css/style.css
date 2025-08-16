@@ -1,428 +1,124 @@
-:root {
+/* ==== THEME Clean v1 (2025-08-16) =================================== */
+/* 變數集中設定 */
+:root{
   --color-background: #F1F2F2;
-  --color-foreground: #C14420;
+  --color-foreground: #C14420;      /* 內文本色（你之前的主色） */
   --font-main: 'Work Sans', sans-serif;
   --content-width: 826px;
-}
 
-body {
-  font-family: var(--font-main);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-foreground);
-  background-color: var(--color-background);
-  margin: 0 auto;
-  max-width: var(--content-width);
-  padding: 2rem;
-  word-break: break-word;
-}
+  --heading-color: #233B5E;         /* 標題與導覽靛藍 */
+  --accent: #C14420;                /* 強調／active 色 */
+  --link: #007cba;                  /* 連結色 */
 
-h1, h2, h3 {
-  font-weight: bold;
-  color: #000;
-}
-
-a {
-  color: #007cba;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  margin-top: 4rem;
-  padding: 1rem;
-  border-top: 1px solid #ccc;
-}
-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0;
-  color: #000;
-}
-
-header h1 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header .subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-/* === 導覽列總容器置中設定 === */
-.navbar {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* === 導覽列 ul 組織設定 === */
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 2rem 0;
-  text-align: center;
-}
-
-/* === 各項目置中顯示 === */
-.navbar ul li {
-  display: inline-block;
-  margin: 0 1rem;
-}
-
-/* === 泡泡按鈕樣式核心設定 === */
-.navbar ul li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #eee;
-  color: #333;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-/* === 滑鼠 Hover 效果 === */
-.navbar ul li a:hover {
-  background-color: #C14420;
-  color: white;
-}
-/* ========== 文章列表（含縮圖） ========== */
-.post-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.post-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1.25rem 0;
-}
-
-.thumb-wrap {
-  display: block;
-  flex-shrink: 0;
-  line-height: 0; /* 去除圖片底部空隙 */
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.post-thumb {
-  width: 240px;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
-
-.post-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.post-title {
-  margin: 0 0 .25rem;
-  font-size: 1.2rem;
-  line-height: 1.35;
-}
-
-.post-title a {
-  color: #C14420;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.post-title a:hover {
-  text-decoration: underline;
-}
-
-.post-date {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: #999;
-  margin-bottom: .35rem;
-}
-
-.post-excerpt {
-  margin: 0;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* 手機版排版優化 */
-@media (max-width: 640px) {
-  .post-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .post-thumb {
-    width: 100%;
-    height: 180px;
-  }
-}
-/* ========== 文章列表（含縮圖） ========== */
-.post-list { list-style: none; padding: 0; margin: 0; }
-.post-item { display: flex; align-items: center; gap: 1rem; margin: 1.25rem 0; }
-.thumb-wrap { display: block; flex-shrink: 0; line-height: 0; border-radius: 10px; overflow: hidden; }
-.post-thumb { width: 240px; height: 160px; object-fit: cover; display: block; border-radius: 10px; }
-.post-info { flex: 1; min-width: 0; }
-.post-title { margin: 0 0 .25rem; font-size: 1.2rem; line-height: 1.35; }
-.post-title a { color: #C14420; text-decoration: none; font-weight: 700; }
-.post-title a:hover { text-decoration: underline; }
-.post-date { display: inline-block; font-size: 0.9rem; color: #999; margin-bottom: .35rem; }
-
-/* 手機版 */
-@media (max-width: 640px) {
-  .post-item { flex-direction: column; align-items: flex-start; }
-  .post-thumb { width: 100%; height: 180px; }
-}
-
-.navbar ul li a.active {
-  background-color: #C14420;
-  color: #fff;
-}
-.navbar{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(6px);
-  background-color: rgba(241,242,242,.85); /* 與你的背景色接近 */
-}
-/* 1) 全站改成 border-box，padding 不再把寬度撐爆 */
-html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
-
-/* 2) 讓版心在小螢幕不超出寬度 */
-body {
-  /* 原本就有 max-width: 826px; 這裡用 min() 更安全 */
-  width: min(100%, var(--content-width));
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* 手機縮小左右邊距，視覺更舒服 */
-@media (max-width: 640px) {
-  body { padding: 1rem; }
-}
-
-/* 3) 防止任何媒體元素超出容器寬度 */
-img, video, iframe { max-width: 100%; height: auto; display: block; }
-
-/* 4) 文章頁封面固定高度 + 裁切（避免寬度溢出） */
-.post-hero { margin: 1rem 0 1.25rem; border-radius: 10px; overflow: hidden; }
-.post-hero img { width: 100%; height: 280px; object-fit: cover; }
-@media (max-width: 640px) { .post-hero img { height: 200px; } }
-
-/* 5) 文字/程式碼太長也不會撐出橫向捲軸 */
-pre, code { white-space: pre-wrap; word-break: break-word; }
-
-/* 分類索引樣式 */
-.tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
-.tax-list li { display:flex; align-items:center; gap:.4rem; }
-.tax-list a { background:#eee; color:#333; border-radius:999px; padding:.4rem .9rem; text-decoration:none; }
-.tax-list a:hover { background:#C14420; color:#fff; }
-.tax-list .count { font-size:.85rem; color:#999; }
-
-/* === 標題配色：靛藍 === */
-:root{
-  --heading-color: #233B5E;   /* 你要的顏色 */
-}
-
-/* 全站所有標題用靛藍 */
-h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
-
-/* 只想改「文章內」標題就改用這行（把上一行註解掉） */
-/* .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { color: var(--heading-color); } */
-
-/* 文章內 H2 左側細線版本 */
-.post h2{
-  border-left: 4px solid rgba(35,59,94,.7); /* #233B5E 的 70% 不透明 */
-  padding-left: .4rem;
-}
-
-/* 手機再細一點（可選） */
-@media (max-width: 640px){
-  .post h2{ border-left-width: 4px; padding-left: .35rem; }
-}
-
-
-/*（可選）首頁大標也套同色 */
-header h1, header h1 a { color: var(--heading-color); }
-
-
-/* 主題色：你先前指定的靛藍 + 你的主色 */
-:root{
-  --heading-color: #233B5E;  /* 標題與導覽列文字色 */
-  --accent: #C14420;         /* 點擊/強調色 */
-}
-
-/* ========== Header 標題（Momo in RA）hover：漸現底線 + 變色 ========== */
-header h1 a{
-  position: relative;
-  text-decoration: none;
-  color: var(--heading-color);
-  transition: color .25s ease;
-}
-header h1 a::after{
-  content:"";
-  position:absolute; left:0; bottom:-6px;
-  height:3px; width:100%;
-  background: linear-gradient(90deg, var(--heading-color), var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-  border-radius: 999px;
-}
-header h1 a:hover{
-  color: var(--accent);
-}
-header h1 a:hover::after{
-  transform: scaleX(1);
-}
-
-/* ========== 導覽列「泡泡」按鈕 hover：由淺到滿版填色 + 微浮起 ========== */
-.navbar ul{
-  display:flex; flex-wrap:wrap; gap:.5rem 1rem;
-  justify-content:center; padding:0; margin:1rem 0 2rem;
-}
-.navbar ul li{ list-style:none; }
-
-.navbar ul li a{
-  position: relative;
-  display: inline-block;
-  padding: .55rem 1rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--heading-color);
-  background: 
-    linear-gradient(90deg, var(--accent), var(--accent)) left / 0% 100% no-repeat, 
-    #ffffff;                                  /* 漸進填色：背景尺寸從 0% → 100% */
-  border: 1px solid rgba(35,59,94,.15);
-  transition: background-size .25s ease, color .25s ease,
-              border-color .25s ease, box-shadow .25s ease, transform .15s ease;
-}
-.navbar ul li a:hover{
-  background-size: 100% 100%;                /* 滑過時整顆填滿主色 */
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 8px 18px rgba(193,68,32,.22); /* 淺淺的陰影 */
-  transform: translateY(-1px);               /* 微浮起 */
-}
-
-/* 目前頁（active）維持滿版 */
-.navbar ul li a.active{
-  background:
-    linear-gradient(90deg, var(--accent), var(--accent)) left / 100% 100% no-repeat,
-    #ffffff;
-  color:#fff; border-color: transparent;
-  box-shadow: 0 8px 18px rgba(193,68,32,.22);
-}
-
-/* 鍵盤可達性 */
-.navbar ul li a:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-/* 喜歡更低調？可把 hover 的漂浮與陰影調淡或關掉： */
-/* .navbar ul li a:hover{ transform:none; box-shadow:none; } */
-
-/* ==== 1) 關掉 Header / 導覽列的預設底線（避免雙底線） ==== */
-header a,
-header a:hover,
-.navbar a,
-.navbar a:hover {
-  text-decoration: none !important;
-}
-
-/* ==== 2) Header 標題 hover：保留單一漸現底線（不疊加） ==== */
-header h1 a{
-  position: relative;
-  color: var(--heading-color);
-  transition: color .25s ease;
-}
-header h1 a::after{
-  content:"";
-  position:absolute; left:0; bottom:-6px;
-  height:2px; width:100%;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-  border-radius: 999px;
-}
-header h1 a:hover{
-  color: var(--accent);
-}
-header h1 a:hover::after{
-  transform: scaleX(1);
-}
-
-/* ==== 3) 導覽列泡泡：預設淡靛藍底，hover 稍微加深，不會變白 ==== */
-:root{
-  --heading-color: #233B5E;   /* 你的標題/主字色 */
-  --accent: #C14420;          /* 強調色（active 用） */
-  --pill-bg: rgba(35,59,94,.07);   /* 泡泡預設底（靛藍 7%） */
-  --pill-bg-hover: rgba(35,59,94,.16); /* hover 底（靛藍 16%） */
-  --pill-border: rgba(35,59,94,.18);
-  --pill-border-hover: rgba(35,59,94,.35);
-}
-
-.navbar ul{
-  display:flex; flex-wrap:wrap; gap:.5rem 1rem;
-  justify-content:center; padding:0; margin:1rem 0 2rem;
-}
-.navbar ul li{ list-style:none; }
-
-.navbar ul li a{
-  display:inline-block;
-  padding:.55rem 1rem;
-  border-radius:999px;
-  font-weight:600;
-  color: var(--heading-color);
-  background: var(--pill-bg);              /* ← 不再是白色 */
-  border:1px solid var(--pill-border);
-  transition: background-color .25s ease, color .25s ease,
-              border-color .25s ease, box-shadow .25s ease, transform .15s ease;
-}
-.navbar ul li a:hover{
-  background: var(--pill-bg-hover);        /* ← 淡淡加深 */
-  color: var(--heading-color);             /* 文字保持靛藍，不變白 */
-  border-color: var(--pill-border-hover);
-  box-shadow: 0 6px 14px rgba(35,59,94,.12);
-  transform: translateY(-1px);
-}
-
-/* 目前頁（active）：用重點色填滿，字白，清楚標示 */
-.navbar ul li a.active{
-  background: var(--accent);
-  color:#fff;
-  border-color: transparent;
-  box-shadow: 0 8px 18px rgba(193,68,32,.22);
-}
-
-:root{
-  --pill-bg: #EAF0F8;          /* 預設底：淡靛藍 */
-  --pill-bg-hover: #DCE7F3;    /* 滑過底：再深一點 */
+  /* 泡泡按鈕（淡靛藍，不是灰色） */
+  --pill-bg: #EAF0F8;
+  --pill-bg-hover: #DCE7F3;
   --pill-border: #C8D7EE;
   --pill-border-hover: #A9C3E4;
 }
 
+/* 基礎版面與 Reset */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
-/* 鍵盤可達性 */
-.navbar ul li a:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+body {
+  font-family: var(--font-main);
+  font-size: 16px; line-height: 1.6;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+  padding: 2rem;
+  word-break: break-word;
 }
+@media (max-width: 640px){ body { padding: 1rem; } }
+
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+pre, code { white-space: pre-wrap; word-break: break-word; }
+
+/* 文字與標題 */
+h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-weight: bold; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+header { text-align: center; margin-bottom: 3rem; }
+header h1 { font-size: 2.5rem; font-weight: 700; margin: 0; }
+header h1 a { color: var(--heading-color); text-decoration: none; position: relative; transition: color .25s; }
+header h1 a::after{
+  content:""; position:absolute; left:0; bottom:-6px; height:2px; width:100%;
+  background: var(--accent); transform: scaleX(0); transform-origin:left; transition: transform .25s;
+  border-radius:999px;
+}
+header h1 a:hover{ color: var(--accent); }
+header h1 a:hover::after{ transform: scaleX(1); }
+header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
+/* 不要 header/nav 的預設底線，避免雙底線 */
+header a:hover, .navbar a:hover { text-decoration: none; }
+
+/* 導覽列（泡泡樣式） */
+.navbar{
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(6px);
+  background-color: rgba(241,242,242,.85);
+  text-align: center; margin-bottom: 2rem;
+}
+.navbar ul{
+  list-style:none; padding:0; margin:1rem 0 2rem;
+  display:flex; flex-wrap:wrap; gap:.5rem 1rem; justify-content:center;
+}
+.navbar li{ list-style:none; }
+.navbar a{
+  display:inline-block; padding:.55rem 1rem; border-radius:999px; font-weight:600;
+  color: var(--heading-color);
+  background: var(--pill-bg);
+  border:1px solid var(--pill-border);
+  transition: background-color .25s, color .25s, border-color .25s, box-shadow .25s, transform .15s;
+}
+.navbar a:hover{
+  background: var(--pill-bg-hover); color: var(--heading-color);
+  border-color: var(--pill-border-hover);
+  box-shadow: 0 6px 14px rgba(35,59,94,.12);
+  transform: translateY(-1px);
+}
+.navbar a.active{
+  background: var(--accent); color:#fff; border-color: transparent;
+  box-shadow: 0 8px 18px rgba(193,68,32,.22);
+}
+.navbar a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+/* 文章列表（含縮圖） */
+.post-list { list-style:none; padding:0; margin:0; }
+.post-item { display:flex; align-items:center; gap:1rem; margin:1.25rem 0; }
+.thumb-wrap { display:block; flex-shrink:0; line-height:0; border-radius:10px; overflow:hidden; }
+.post-thumb { width:240px; height:160px; object-fit:cover; display:block; border-radius:10px; }
+.post-info { flex:1; min-width:0; }
+.post-title { margin:0 0 .25rem; font-size:1.2rem; line-height:1.35; }
+.post-title a { color: var(--color-foreground); font-weight:700; text-decoration:none; }
+.post-title a:hover { text-decoration: underline; }
+.post-date { display:inline-block; font-size:.9rem; color:#999; margin-bottom:.35rem; }
+.post-excerpt { margin:0; color:#333; line-height:1.6; }
+@media (max-width:640px){
+  .post-item{ flex-direction:column; align-items:flex-start; }
+  .post-thumb{ width:100%; height:180px; }
+}
+
+/* 文章頁封面（固定高度 + 裁切） */
+.post-hero { margin:1rem 0 1.25rem; border-radius:10px; overflow:hidden; }
+.post-hero img { width:100%; height:280px; object-fit:cover; }
+@media (max-width:640px){ .post-hero img { height:200px; } }
+
+/* 文章內 H2 左側細線（細版） */
+.post h2{ border-left: 2px solid rgba(35,59,94,.7); padding-left:.4rem; }
+@media (max-width:640px){ .post h2{ border-left-width:2px; padding-left:.35rem; } }
+
+/* 分類索引 */
+.tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
+.tax-list li { display:flex; align-items:center; gap:.4rem; }
+.tax-list a { background: var(--pill-bg); color: var(--heading-color); border-radius:999px; padding:.4rem .9rem; text-decoration:none; border:1px solid var(--pill-border); }
+.tax-list a:hover { background: var(--pill-bg-hover); border-color: var(--pill-border-hover); color: var(--heading-color); }
+.tax-list .count { font-size:.85rem; color:#999; }
+
+/* footer */
+footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid #ccc; }
+/* =================================================================== */
