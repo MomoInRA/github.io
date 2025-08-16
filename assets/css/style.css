@@ -246,11 +246,17 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
 /* 只想改「文章內」標題就改用這行（把上一行註解掉） */
 /* .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { color: var(--heading-color); } */
 
-/*（可選）H2 加左側色條，層次更清楚 */
+/* 文章內 H2 左側細線版本 */
 .post h2{
-  border-left: 6px solid var(--heading-color);
-  padding-left: .5rem;
+  border-left: 3px solid var(--heading-color); /* 原本 6px → 改 3px */
+  padding-left: .4rem;                          /* 配合縮小，縮一點內距 */
 }
+
+/* 手機再細一點（可選） */
+@media (max-width: 640px){
+  .post h2{ border-left-width: 2px; padding-left: .35rem; }
+}
+
 
 /*（可選）首頁大標也套同色 */
 header h1, header h1 a { color: var(--heading-color); }
