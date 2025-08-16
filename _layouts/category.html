@@ -3,6 +3,10 @@ layout: default
 ---
 <h2>分類：{{ page.category }}</h2>
 
+<p style="margin:0 0 .75rem;">
+  <a href="{{ '/categories/' | relative_url }}">← 返回文章類別</a>
+</p>
+
 <ul class="post-list">
   {% assign cat = page.category %}
   {% assign posts_in_cat = site.categories[cat] | sort: 'date' | reverse %}
@@ -30,6 +34,4 @@ layout: default
     </li>
   {% endfor %}
 </ul>
-<p style="margin:0 0 .75rem;">
-  <a href="{{ '/categories/' | relative_url }}">← 返回文章類別</a>
-</p>
+
