@@ -9,19 +9,16 @@ title: 所有文章
   {% for post in site.posts %}
     <li class="post-item">
       {% if post.image %}
-        <a href="{{ post.url | relative_url }}" class="thumb-wrap" aria-label="{{ post.title }}">
-          <img
-            src="{{ post.image | relative_url }}"
-            alt="{{ post.title }}"
-            class="post-thumb"
-            loading="lazy"
-            width="240" height="160">
-        </a>
+        <img
+          src="{{ site.baseurl }}{{ post.image }}"
+          alt="{{ post.title }}"
+          class="post-thumb"
+          loading="lazy"
+          width="240" height="160">
       {% endif %}
       <div class="post-info">
-        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
       </div>
     </li>
   {% endfor %}
