@@ -237,3 +237,7 @@ hr {
   .post-epilogue__quote{ max-width: 32ch; font-size: .98rem; }
   .author-card{ padding: .9rem 1rem; }
 }
+.post-epilogue__rule {
+  background: none;  /* 不畫線 */
+}
+
