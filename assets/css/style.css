@@ -241,3 +241,52 @@ hr {
   background: none;  /* 不畫線 */
 }
 
+/* --- Closing：只留上方一條線＋符號，移除底線 --- */
+.post-epilogue{ margin-top: 2.75rem; margin-bottom: 1.25rem; text-align: center; }
+.post-epilogue__rule{
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  margin: 0 auto 1rem;
+  max-width: 400px;
+}
+.post-epilogue__glyph{
+  position: relative;
+  top: -0.7em;
+  display: inline-block;
+  padding: 0 .75rem;
+  font-size: .85rem;
+  color: #9ca3af;
+  background: transparent; /* 不要白底 */
+}
+/* 保留你原本的引文樣式即可 */
+.post-epilogue__quote{ margin: 0 auto; max-width: 48ch; line-height: 1.75; color: #374151; font-size: 1rem; font-style: italic; letter-spacing: .01em; }
+.post-epilogue__zh{ margin-top: .5rem; font-style: normal; color: #4b5563; font-size: .98rem; }
+
+/* --- 作者卡：左圖右文、靠左對齊（與你原本的 author-card 疊加） --- */
+.author-card{
+  display: flex;            /* 改成橫向排版 */
+  align-items: center;
+  gap: .9rem;
+  text-align: left;         /* 文字靠左 */
+  justify-content: flex-start;
+}
+
+.author-card__avatar{
+  width: 56px;              /* 頭像大小可調 */
+  height: 56px;
+  object-fit: cover;
+  background: #e5e7eb;
+  flex: 0 0 56px;           /* 固定寬度避免擠壓 */
+}
+.author-card__avatar.is-circle{ border-radius: 50%; }
+.author-card__avatar.is-square{ border-radius: 8px; }
+
+.author-card__meta{
+  align-items: flex-start;  /* 讓右側文字靠左對齊 */
+  text-align: left;
+}
+
+@media (max-width: 640px){
+  .author-card{ align-items: flex-start; }
+}
