@@ -13,3 +13,9 @@ collections:
   posts:
     output: true
     permalink: /:categories/:year/:month/:day/:title.html
+
+author:
+  name: Momo
+  title: Biomedical Regulatory Affairs (UW)
+  email: your@email.com
+  link: https://momoinra.github.io/github.io/
