@@ -465,19 +465,4 @@ hr {
 .author-card__links a{
   text-decoration:none; border:none; outline:none; /* 去底線 */
 }
-.author-card__links img.icon{
-  width:22px; height:22px; display:block;
-  transition:transform .2s ease, filter .2s ease;
-  filter: grayscale(40%) brightness(0.8);  /* 預設柔灰 */
-}
-.author-card__links a:hover img.icon{
-  transform:scale(1.1);
-  /* 將黑色/灰階 PNG 染成接近 #233B5E 的藍靛色 */
-  filter: invert(17%) sepia(23%) saturate(956%) hue-rotate(182deg) brightness(92%) contrast(93%);
-}
 
-/* 如果你的 icon 改成單色 SVG，可不靠 filter，直接用 fill： */
-/*
-.author-card__links img.icon { filter:none; }
-.author-card__links a:hover img.icon { filter:none; }
-*/
