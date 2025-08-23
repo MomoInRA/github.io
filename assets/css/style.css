@@ -148,3 +148,12 @@ hr {
   margin: 2em 0;
 }
 
+.post-meta {
+  color: #6b7280;            /* 灰色字體 */
+  font-size: 0.9rem;         /* 小一點 */
+  letter-spacing: 0.03em;    /* 微字距 */
+}
+.post-meta em {
+  font-style: normal;        /* 拿掉預設斜體 */
+  text-transform: uppercase; /* 全大寫（Jul → JUL）可以更有雜誌感 */
+}
