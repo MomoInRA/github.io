@@ -21,21 +21,23 @@
     <img src="{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
   {% endif %}
 
-  <div class="author-card__meta">
-    <div class="author-card__name">
-      <strong>{{ author_name }}</strong>
-      {% if author_title %}<span class="middot">·</span><span>{{ author_title }}</span>{% endif %}
-    </div>
-    <div class="author-card__links">
-      {% if author_link %}
-        <a href="{{ author_link }}" rel="noopener" target="_blank">Portfolio</a>
-      {% endif %}
-      {% if author_mail %}
-        <span class="middot">·</span><a href="mailto:{{ author_mail }}">Email</a>
-      {% endif %}
-      {% if site.author.linkedin %}
-        <span class="middot">·</span><a href="{{ site.author.linkedin }}" rel="noopener" target="_blank">LinkedIn</a>
-      {% endif %}
-    </div>
+  <div class="author-card__links">
+  {% if author_link %}
+    <a href="{{ author_link }}" rel="noopener" target="_blank" aria-label="Portfolio">
+      <img src="{{ site.baseurl }}/github.io/assets/images/portfolio.png" alt="Portfolio" class="icon">
+    </a>
+  {% endif %}
+  {% if author_mail %}
+    <a href="mailto:{{ author_mail }}" aria-label="Email">
+      <img src="{{ site.baseurl }}/github.io/assets/images/email.png" alt="Email" class="icon">
+    </a>
+  {% endif %}
+  {% if site.author.linkedin %}
+    <a href="{{ site.author.linkedin }}" rel="noopener" target="_blank" aria-label="LinkedIn">
+      <img src="{{ site.baseurl }}/github.io/assets/images//linkedin.png" alt="LinkedIn" class="icon">
+    </a>
+  {% endif %}
+</div>
+
   </div>
 </section>
