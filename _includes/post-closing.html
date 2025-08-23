@@ -1,23 +1,34 @@
-<!-- _includes/post-closing.html -->
-<div class="post-closing">
-  <p class="closing-line">
-    <em>I'm still figuring things out, but if this piece gave you a little clarity, then we've learned together.</em>
-    <em>一個在美國讀RA碩士的女森。法規世界無垠，我邊學邊寫，邊迷惘邊理解。</em>
-  </p>
+<footer class="post-epilogue" aria-label="Article epilogue">
+  <div class="post-epilogue__rule" aria-hidden="true">
+    <span class="post-epilogue__glyph">✦</span>
+  </div>
 
-  <div class="author-card">
-    {% assign author_name  = page.author | default: site.author.name %}
-    {% assign author_title = page.author_title | default: site.author.title %}
-    {% assign author_mail  = page.author_email | default: site.author.email %}
-    {% assign author_link  = page.author_link  | default: site.author.link %}
+  <blockquote class="post-epilogue__quote">
+    <p>I'm still figuring things out, but if this piece gave you a little clarity, then we've learned together.</p>
+    <p class="post-epilogue__zh">一個在美國讀 RA 碩士的女森。法規世界無垠，我邊學邊寫，邊迷惘邊理解。</p>
+  </blockquote>
 
-    <div class="author-meta">
-      <div class="author-text">
-        <strong>{{ author_name }}</strong>
-        {% if author_title %} · <span>{{ author_title }}</span>{% endif %}
-        {% if author_link %} · <a href="{{ author_link }}" target="_blank" rel="noopener">Portfolio</a>{% endif %}
-        {% if author_mail %} · <a href="mailto:{{ author_mail }}">Email</a>{% endif %}
-      </div>
+  <div class="post-epilogue__rule post-epilogue__rule--bottom" aria-hidden="true">
+    <span class="post-epilogue__dot">• • •</span>
+  </div>
+</footer>
+
+<!-- 作者資訊卡片（可保留在同一個 include 或另做 _includes/author-card.html） -->
+<section class="author-card" aria-label="Author">
+  <div class="author-card__meta">
+    <div class="author-card__name">
+      <strong>{{ page.author | default: site.author.name }}</strong>
+    </div>
+    <div class="author-card__links">
+      {% if site.author.link %}
+        <a href="{{ site.author.link }}" rel="noopener" target="_blank">Portfolio</a>
+      {% endif %}
+      {% if site.author.email %}
+        <span class="middot">·</span><a href="mailto:{{ site.author.email }}">Email</a>
+      {% endif %}
+      {% if site.author.linkedin %}
+        <span class="middot">·</span><a href="{{ site.author.linkedin }}" rel="noopener" target="_blank">LinkedIn</a>
+      {% endif %}
     </div>
   </div>
-</div>
+</section>
