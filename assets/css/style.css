@@ -409,3 +409,20 @@ hr {
 }
 .author-card__links a:hover { border-bottom-color: currentColor; }
 .author-card .middot { color: #9ca3af; }
+.author-card__links {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.author-card__links img.icon {
+  width: 22px;      /* icon 大小，可以調整 */
+  height: 22px;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.author-card__links a:hover img.icon {
+  transform: scale(1.15);   /* hover 微放大 */
+  opacity: 0.8;             /* hover 微透明 */
+}
