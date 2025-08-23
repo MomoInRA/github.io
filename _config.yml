@@ -19,3 +19,6 @@ author:
   title: Biomedical Regulatory Affairs (UW)
   email: your@email.com
   link: https://momoinra.github.io/github.io/
+  linkedin: https://www.linkedin.com/in/your-id
+  avatar: /assets/img/momo.jpg        # ← 圖片路徑
+  avatar_shape: circle                 # circle 或 square
