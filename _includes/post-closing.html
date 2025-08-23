@@ -13,18 +13,30 @@
   </div>
 </footer>
 
-<!-- 作者資訊卡片（可保留在同一個 include 或另做 _includes/author-card.html） -->
+<!-- 作者資訊卡片（含左側頭像） -->
 <section class="author-card" aria-label="Author">
+  {% assign author_name  = page.author | default: site.author.name %}
+  {% assign author_title = page.author_title | default: site.author.title %}
+  {% assign author_mail  = page.author_email | default: site.author.email %}
+  {% assign author_link  = page.author_link  | default: site.author.link %}
+  {% assign avatar_src   = page.author_avatar | default: site.author.avatar %}
+  {% assign avatar_shape = page.author_avatar_shape | default: site.author.avatar_shape | default: 'circle' %}
+
+  {% if avatar_src %}
+    <img src="{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
+  {% endif %}
+
   <div class="author-card__meta">
     <div class="author-card__name">
-      <strong>{{ page.author | default: site.author.name }}</strong>
+      <strong>{{ author_name }}</strong>
+      {% if author_title %}<span class="middot">·</span><span>{{ author_title }}</span>{% endif %}
     </div>
     <div class="author-card__links">
-      {% if site.author.link %}
-        <a href="{{ site.author.link }}" rel="noopener" target="_blank">Portfolio</a>
+      {% if author_link %}
+        <a href="{{ author_link }}" rel="noopener" target="_blank">Portfolio</a>
       {% endif %}
-      {% if site.author.email %}
-        <span class="middot">·</span><a href="mailto:{{ site.author.email }}">Email</a>
+      {% if author_mail %}
+        <span class="middot">·</span><a href="mailto:{{ author_mail }}">Email</a>
       {% endif %}
       {% if site.author.linkedin %}
         <span class="middot">·</span><a href="{{ site.author.linkedin }}" rel="noopener" target="_blank">LinkedIn</a>
