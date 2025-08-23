@@ -2,6 +2,7 @@
 layout: post
 title: "如果師大女足事件發生在美國會怎樣(1/3)：IRB"
 date: 2025-07-29
+permalink: /The-Role-and-Limits-of-IRBs/
 categories: [師大女足事件發生在美國會怎樣]
 tags: [Clinical Trials, 知情同意, 研究倫理, Informed consent, Institutional review board, IRB, 師大女足]
 image: /assets/images/ethical-consideration.jpg  
