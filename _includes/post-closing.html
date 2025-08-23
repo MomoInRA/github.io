@@ -18,26 +18,26 @@
   {% assign avatar_shape = page.author_avatar_shape | default: site.author.avatar_shape | default: 'circle' %}
 
   {% if avatar_src %}
-    <img src="{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
+    <!-- 用 baseurl 前綴，避免專案站路徑錯誤 -->
+    <img src="{{ site.baseurl }}{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
   {% endif %}
 
+  <!-- 連結 icon（用你自己上傳的圖片） -->
   <div class="author-card__links">
-  {% if author_link %}
-    <a href="{{ author_link }}" rel="noopener" target="_blank" aria-label="Portfolio">
-      <img src="{{ site.baseurl }}/github.io/assets/images/portfolio.png" alt="Portfolio" class="icon">
-    </a>
-  {% endif %}
-  {% if author_mail %}
-    <a href="mailto:{{ author_mail }}" aria-label="Email">
-      <img src="{{ site.baseurl }}/github.io/assets/images/email.png" alt="Email" class="icon">
-    </a>
-  {% endif %}
-  {% if site.author.linkedin %}
-    <a href="{{ site.author.linkedin }}" rel="noopener" target="_blank" aria-label="LinkedIn">
-      <img src="{{ site.baseurl }}/github.io/assets/images//linkedin.png" alt="LinkedIn" class="icon">
-    </a>
-  {% endif %}
-</div>
-
+    {% if author_link %}
+      <a href="{{ author_link }}" rel="noopener" target="_blank" aria-label="Portfolio">
+        <img src="{{ site.baseurl }}/assets/images/portfolio.png" alt="Portfolio" class="icon">
+      </a>
+    {% endif %}
+    {% if author_mail %}
+      <a href="mailto:{{ author_mail }}" aria-label="Email">
+        <img src="{{ site.baseurl }}/assets/images/email.png" alt="Email" class="icon">
+      </a>
+    {% endif %}
+    {% if site.author.linkedin %}
+      <a href="{{ site.author.linkedin }}" rel="noopener" target="_blank" aria-label="LinkedIn">
+        <img src="{{ site.baseurl }}/assets/images/linkedin.png" alt="LinkedIn" class="icon">
+      </a>
+    {% endif %}
   </div>
 </section>
