@@ -158,27 +158,82 @@ hr {
   text-transform: uppercase; /* 全大寫（Jul → JUL）可以更有雜誌感 */
 }
 
-.post-closing{
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e5e7eb;
+/* --- Closing（引用雜誌風，增強版） --- */
+.post-epilogue{
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
 }
-.post-closing .closing-line{
-  font-size: 0.98rem;
+.post-epilogue__rule{
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  margin: 0 0 1rem 0;
+}
+.post-epilogue__rule--bottom{
+  margin: 1rem 0 0 0;
+}
+.post-epilogue__glyph,
+.post-epilogue__dot{
+  position: relative;
+  top: -0.7em;
+  display: inline-block;
+  padding: 0 .75rem;
+  font-size: .85rem;
+  color: #9ca3af;
+  background: #fff; /* 若你的背景不是純白，改成相同底色 */
+}
+.post-epilogue__quote{
+  margin: 0 auto;
+  max-width: 48ch;          /* 縮小欄寬 → 更像雜誌引文 */
+  line-height: 1.75;
   color: #374151;
-  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: .01em;
 }
-.post-closing .author-card{
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
+.post-epilogue__zh{
+  margin-top: .5rem;
+  font-style: normal;       /* 英文保留 italic，中文改回正常字形 */
   color: #4b5563;
+  font-size: .98rem;
 }
-.post-closing .author-meta .author-text a{
+
+/* --- 作者資訊卡片（簡潔、與內文區隔） --- */
+.author-card{
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+}
+.author-card__meta{
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  align-items: center;
+  text-align: center;
+}
+.author-card__name{
+  font-variant-caps: small-caps;
+  letter-spacing: .06em;
+  color: #111827;
+}
+.author-card__links a{
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,.15);
+  border-bottom: 1px solid rgba(0,0,0,.18);
+  color: #374151;
 }
-.post-closing .author-meta .author-text a:hover{
+.author-card__links a:hover{
   border-bottom-color: currentColor;
+}
+.author-card .middot{
+  margin: 0 .4rem;
+  color: #9ca3af;
+}
+
+/* 手機優化 */
+@media (max-width: 640px){
+  .post-epilogue__quote{ max-width: 32ch; font-size: .98rem; }
+  .author-card{ padding: .9rem 1rem; }
 }
