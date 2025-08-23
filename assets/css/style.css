@@ -158,76 +158,82 @@ hr {
   text-transform: uppercase; /* 全大寫（Jul → JUL）可以更有雜誌感 */
 }
 
-/* --- Closing 引文 --- */
-.post-epilogue {
-  margin-top: 3rem;
+/* --- Closing（引用雜誌風，增強版） --- */
+.post-epilogue{
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
   text-align: center;
 }
-.post-epilogue__rule {
+.post-epilogue__rule{
+  position: relative;
   height: 1px;
-  background: linear-gradient(to right, transparent, #a0aabb, transparent);
-  margin: 0 auto 1.25rem auto;
-  max-width: 400px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  margin: 0 0 1rem 0;
 }
-.post-epilogue__glyph {
-  color: #7a8c9d;
+.post-epilogue__rule--bottom{
+  margin: 1rem 0 0 0;
+}
+.post-epilogue__glyph,
+.post-epilogue__dot{
+  position: relative;
+  top: -0.7em;
+  display: inline-block;
   padding: 0 .75rem;
   font-size: .85rem;
-  background: transparent; /* 去掉白底 */
+  color: #9ca3af;
+  background: #fff; /* 若你的背景不是純白，改成相同底色 */
 }
-.post-epilogue__quote {
+.post-epilogue__quote{
   margin: 0 auto;
-  max-width: 48ch;
-  line-height: 1.7;
+  max-width: 48ch;          /* 縮小欄寬 → 更像雜誌引文 */
+  line-height: 1.75;
+  color: #374151;
   font-size: 1rem;
-  color: #2f3a4a;         /* 深灰藍 */
   font-style: italic;
+  letter-spacing: .01em;
 }
-.post-epilogue__zh {
+.post-epilogue__zh{
   margin-top: .5rem;
-  font-style: normal;     /* 中文用正常字體 */
+  font-style: normal;       /* 英文保留 italic，中文改回正常字形 */
   color: #4b5563;
-  font-size: .96rem;
+  font-size: .98rem;
 }
 
-/* --- 作者資訊卡 --- */
-.author-card {
-  margin-top: 2rem;
+/* --- 作者資訊卡片（簡潔、與內文區隔） --- */
+.author-card{
+  margin-top: 1.25rem;
   padding: 1rem 1.25rem;
-  border: 1px solid #d1d5dc; /* 灰邊框 */
-  background: transparent;   /* 無白底，跟頁面融合 */
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  background: #fafafa;
 }
-.author-card__avatar {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  background: #e5e7eb;
-}
-.author-card__avatar.is-circle { border-radius: 50%; }
-.author-card__avatar.is-square { border-radius: 8px; }
-
-.author-card__meta {
+.author-card__meta{
   display: flex;
   flex-direction: column;
   gap: .25rem;
+  align-items: center;
+  text-align: center;
 }
-.author-card__name {
-  color: #1f2a35;
+.author-card__name{
   font-variant-caps: small-caps;
-  letter-spacing: .05em;
+  letter-spacing: .06em;
+  color: #111827;
 }
-.author-card__links {
-  font-size: .92rem;
+.author-card__links a{
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.18);
   color: #374151;
 }
-.author-card__links a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+.author-card__links a:hover{
+  border-bottom-color: currentColor;
 }
-.author-card__links a:hover { border-bottom-color: currentColor; }
-.author-card .middot { margin: 0 .4rem; color: #9ca3af; }
+.author-card .middot{
+  margin: 0 .4rem;
+  color: #9ca3af;
+}
+
+/* 手機優化 */
+@media (max-width: 640px){
+  .post-epilogue__quote{ max-width: 32ch; font-size: .98rem; }
+  .author-card{ padding: .9rem 1rem; }
+}
