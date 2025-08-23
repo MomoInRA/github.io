@@ -1,5 +1,5 @@
-<footer class="post-epilogue" aria-label="Article closing">
-  <div class="post-epilogue__rule">
+<footer class="post-epilogue" aria-label="Article epilogue">
+  <div class="post-epilogue__rule" aria-hidden="true">
     <span class="post-epilogue__glyph">✦</span>
   </div>
 
@@ -7,34 +7,27 @@
     <p>I'm still figuring things out, but if this piece gave you a little clarity, then we've learned together.</p>
     <p class="post-epilogue__zh">一個在美國讀 RA 碩士的女森。法規世界無垠，我邊學邊寫，邊迷惘邊理解。</p>
   </blockquote>
+
+  <div class="post-epilogue__rule post-epilogue__rule--bottom" aria-hidden="true">
+    <span class="post-epilogue__dot">• • •</span>
+  </div>
 </footer>
 
-<section class="author-card" aria-label="Author info">
-  {% assign author_name  = page.author | default: site.author.name %}
-  {% assign author_title = page.author_title | default: site.author.title %}
-  {% assign author_mail  = page.author_email | default: site.author.email %}
-  {% assign author_link  = page.author_link  | default: site.author.link %}
-  {% assign avatar_src   = page.author_avatar | default: site.author.avatar %}
-  {% assign avatar_shape = page.author_avatar_shape | default: site.author.avatar_shape | default: 'circle' %}
-
-  {% if avatar_src %}
-    <img src="{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
-  {% endif %}
-
+<!-- 作者資訊卡片（可保留在同一個 include 或另做 _includes/author-card.html） -->
+<section class="author-card" aria-label="Author">
   <div class="author-card__meta">
     <div class="author-card__name">
-      <strong>{{ author_name }}</strong>
-      {% if author_title %}<span class="middot">·</span><span>{{ author_title }}</span>{% endif %}
+      <strong>{{ page.author | default: site.author.name }}</strong>
     </div>
     <div class="author-card__links">
-      {% if author_link %}
-        <a href="{{ author_link }}" target="_blank" rel="noopener">Portfolio</a>
+      {% if site.author.link %}
+        <a href="{{ site.author.link }}" rel="noopener" target="_blank">Portfolio</a>
       {% endif %}
-      {% if author_mail %}
-        <span class="middot">·</span><a href="mailto:{{ author_mail }}">Email</a>
+      {% if site.author.email %}
+        <span class="middot">·</span><a href="mailto:{{ site.author.email }}">Email</a>
       {% endif %}
       {% if site.author.linkedin %}
-        <span class="middot">·</span><a href="{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="middot">·</span><a href="{{ site.author.linkedin }}" rel="noopener" target="_blank">LinkedIn</a>
       {% endif %}
     </div>
   </div>
