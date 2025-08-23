@@ -157,3 +157,28 @@ hr {
   font-style: normal;        /* 拿掉預設斜體 */
   text-transform: uppercase; /* 全大寫（Jul → JUL）可以更有雜誌感 */
 }
+
+.post-closing{
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+.post-closing .closing-line{
+  font-size: 0.98rem;
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+}
+.post-closing .author-card{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+.post-closing .author-meta .author-text a{
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.post-closing .author-meta .author-text a:hover{
+  border-bottom-color: currentColor;
+}
