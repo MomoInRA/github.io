@@ -142,10 +142,10 @@ footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid 
 }
 
 hr {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #aaa, transparent);
-  margin: 2em 0;
+  border: none;
+  border-top: 1px dotted #bbb;
+  width: 50%;
+  margin: 2em auto;
 }
 
 .post-meta {
