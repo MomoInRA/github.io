@@ -18,26 +18,32 @@
   {% assign avatar_shape = page.author_avatar_shape | default: site.author.avatar_shape | default: 'circle' %}
 
   {% if avatar_src %}
-    <!-- 用 baseurl 前綴，避免專案站路徑錯誤 -->
-    <img src="{{ site.baseurl }}{{ avatar_src }}" alt="{{ author_name }}" class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
+    <img src="{{ site.baseurl }}{{ avatar_src }}"
+         alt="{{ author_name }}"
+         class="author-card__avatar {% if avatar_shape == 'circle' %}is-circle{% else %}is-square{% endif %}">
   {% endif %}
 
-  <!-- 連結 icon（用你自己上傳的圖片） -->
-  <div class="author-card__links">
+  <div class="author-card__name">
+    <strong>{{ author_name }}</strong>
+    {% if author_title %}<span class="middot">·</span><span>{{ author_title }}</span>{% endif %}
+  </div>
+
+  <!-- 你的自訂 icon（PNG / SVG 都可） -->
+  <nav class="author-card__links" aria-label="Author links">
     {% if author_link %}
-      <a href="{{ author_link }}" rel="noopener" target="_blank" aria-label="Portfolio">
-        <img src="{{ site.baseurl }}/assets/images/portfolio.png" alt="Portfolio" class="icon">
+      <a href="{{ author_link }}" target="_blank" rel="noopener" aria-label="Portfolio" title="Portfolio">
+        <img src="{{ site.baseurl }}/assets/images/portfolio.png" alt="" class="icon" />
       </a>
     {% endif %}
     {% if author_mail %}
-      <a href="mailto:{{ author_mail }}" aria-label="Email">
-        <img src="{{ site.baseurl }}/assets/images/email.png" alt="Email" class="icon">
+      <a href="mailto:{{ author_mail }}" aria-label="Email" title="Email">
+        <img src="{{ site.baseurl }}/assets/images/email.png" alt="" class="icon" />
       </a>
     {% endif %}
     {% if site.author.linkedin %}
-      <a href="{{ site.author.linkedin }}" rel="noopener" target="_blank" aria-label="LinkedIn">
-        <img src="{{ site.baseurl }}/assets/images/linkedin.png" alt="LinkedIn" class="icon">
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <img src="{{ site.baseurl }}/assets/images/linkedin.png" alt="" class="icon" />
       </a>
     {% endif %}
-  </div>
+  </nav>
 </section>
