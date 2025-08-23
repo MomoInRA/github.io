@@ -141,3 +141,12 @@ footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid 
   height: 7px;
 }
 
+hr {
+  border: none;              /* 移除預設樣式 */
+  border-top: 2px dashed #ccc;  /* 虛線，可改成 solid 實線 */
+  margin: 2em 0;             /* 上下間距 */
+  width: 60%;                /* 線的長度 */
+  margin-left: auto;         /* 置中 */
+  margin-right: auto;
+}
+
