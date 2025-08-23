@@ -352,3 +352,60 @@ hr {
 }
 .author-card__links a:hover { border-bottom-color: currentColor; }
 .author-card .middot { margin: 0 .4rem; color: #9ca3af; }
+/* --- Closing 區塊 --- */
+.post-epilogue__stars {
+  font-size: .9rem;
+  color: #C14420;       /* 主色 ✦ */
+  margin: 1rem 0;
+}
+
+/* --- 作者資訊卡片 --- */
+.author-card {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.author-card__avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.author-card__avatar.is-circle { border-radius: 50%; }
+.author-card__avatar.is-square { border-radius: 8px; }
+
+.author-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 讓名字 + 連結都置中 */
+  text-align: center;
+  gap: .35rem;
+}
+
+.author-card__name {
+  font-variant-caps: small-caps;
+  letter-spacing: .05em;
+  color: #111827;
+}
+
+.author-card__links {
+  font-size: .92rem;
+  color: #374151;
+  display: flex;
+  gap: .5rem;
+  justify-content: center; /* 置中排列 Portfolio · Email · LinkedIn */
+  flex-wrap: wrap;
+}
+
+.author-card__links a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.author-card__links a:hover { border-bottom-color: currentColor; }
+.author-card .middot { color: #9ca3af; }
