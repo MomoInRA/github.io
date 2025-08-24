@@ -67,78 +67,63 @@ header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
 /* 不要 header/nav 的預設底線 */
 header a:hover, .navbar a:hover { text-decoration: none; }
 
-/* ==== 導覽列：玻璃膠囊風格 ==== */
-.navbar {
-  position: sticky;
-  top: 14px;                  /* 頂部留一點距離 */
-  z-index: 100;
-  backdrop-filter: blur(12px); /* 毛玻璃效果 */
-  background-color: rgba(255, 255, 255, 0.4); /* 半透明白 */
-  border-radius: 999px;        /* 膠囊形狀 */
-  padding: 0.6rem 1.2rem;
-  margin: 0 auto 2.5rem;       /* 底部留白 */
-  max-width: fit-content;      /* 只包住內容，不要整條佔滿 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 輕陰影漂浮感 */
-}
 
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;               /* 選項間距 */
-  justify-content: center;
-}
-
-.navbar li { list-style: none; }
-
-.navbar a {
-  color: var(--heading-color);
-  font-weight: 600;
-  padding: .4rem .6rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.navbar a:hover {
-  color: #C14420;              /* 主色 */
-  transform: scale(1.15);      /* 微放大 */
-}
-
-/* 放大鏡icon 讓左右分區 */
+/* ==== Navbar：玻璃膠囊 + 左右分區（最終版） ==== */
 .navbar{
-  position: sticky; top:14px; z-index:1000;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255,255,255,.6);
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  padding: .6rem 1rem;
-  margin: 0 auto 2.5rem;
-  max-width: 100%;
+  position: sticky; top: 14px; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
-}
-.nav-left ul{
-  list-style:none; margin:0; padding:0;
-  display:flex; gap:1.25rem; align-items:center;
-}
-.nav-left li{ list-style:none; }
 
+  /* 玻璃膠囊外觀 */
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  /* 關鍵：要有寬度才分得開左右 */
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto 2.5rem;
+  padding: .55rem .9rem;
+}
+
+/* 左側清單 */
+.nav-left ul{
+  list-style: none; margin: 0; padding: 0;
+  display: flex; align-items: center; gap: 1.1rem;
+}
+.nav-left li{ list-style: none; }
+.nav-left a{
+  color: var(--heading-color);
+  font-weight: 600; font-size: 1rem;
+  text-decoration: none;
+  padding: .35rem .5rem; border-radius: 8px;
+  transition: color .22s ease, transform .22s ease, background-color .22s ease;
+}
+.nav-left a:hover{
+  color: var(--accent);
+  transform: scale(1.06);
+  background: rgba(0,0,0,.04);
+}
+.nav-left a.active{
+  color: var(--accent); font-weight: 700;
+  background: rgba(193,68,32,.10); /* #C14420 的淡底 */
+}
+
+/* 右側放大鏡 */
+.nav-right a{ display:inline-block; padding: .25rem; border-radius: 8px; }
+.nav-right a:hover{ background: rgba(0,0,0,.04); }
 .nav-right a img.icon{
-  width:20px; height:20px; display:inline-block; max-width:none;
-  vertical-align:middle;
+  width: 20px; height: 20px; max-width: none;
+  display: inline-block; vertical-align: middle;
   transition: transform .2s ease, opacity .2s ease;
 }
-.nav-right a:hover img.icon{ transform: scale(1.12); opacity:.85; }
+.nav-right a:hover img.icon{ transform: scale(1.12); opacity: .85; }
 
+/* 行動版微調 */
 @media (max-width:640px){
-  .navbar{ padding:.45rem .8rem; }
-  .nav-left ul{ gap:.9rem; }
+  .navbar{ padding: .45rem .7rem; }
+  .nav-left ul{ gap: .85rem; }
 }
-
-
-
 
 
 /* 文章列表 */
