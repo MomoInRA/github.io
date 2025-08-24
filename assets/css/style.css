@@ -228,7 +228,7 @@ footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid 
   transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
 }
 .author-card__links a:hover img.icon {
-  transform: scale(1.5);   /* hover 微放大 */
+  transform: scale(1.3);   /* hover 微放大 */
   opacity: 0.85;            /* hover 微透明 */
 
 }
