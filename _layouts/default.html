@@ -27,10 +27,10 @@
 
     <!-- 新增搜尋連結 -->
     <li>
-      <a href="{{ '/search/' | relative_url }}"
-         class="{% if page.url contains '/search/' %}active{% endif %}">
-        🔎 Search
-      </a>
+  <a href="{{ '/search/' | relative_url }}"
+     class="{% if page.url contains '/search/' %}active{% endif %}">
+    <img src="{{ '/assets/images/search.svg' | relative_url }}" alt="Search" class="icon">
+  </a>
     </li>
   </ul>
 </nav>
