@@ -125,9 +125,26 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 .post-hero img { width:100%; height:280px; object-fit:cover; }
 @media (max-width:640px){ .post-hero img { height:200px; } }
 
-/* 文章內 H2 左側細線 */
-.post h2{ border-left: 2px solid rgba(35,59,94,.7); padding-left:.4rem; }
-@media (max-width:640px){ .post h2{ border-left-width:2px; padding-left:.35rem; } }
+/* 文章內 H2 細上線（更克制、論文感） */
+.post h2{
+  border: none; padding-top: .5rem; position: relative;
+  margin: 2.25rem 0 1.1rem;
+  font-weight: 700; font-size: 1.4rem; color: var(--heading-color);
+}
+.post h2::before{
+  content:""; position:absolute; left:0; top:0;
+  width: 48px; height: 1px; background: rgba(0,0,0,.15);
+}
+
+/* 讓 h3 比 h2 再輕一階，維持層次 */
+.post h3{
+  margin: 1.6rem 0 .7rem;
+  font-size: 1.15rem; font-weight: 700; color: var(--heading-color);
+}
+
+.post p.drop-cap{ margin-top: .25rem; } /* 與 Drop Cap 相容的小距離 避免貼太近 */
+
+
 
 /* 分類索引 */
 .tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
