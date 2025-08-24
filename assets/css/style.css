@@ -3,8 +3,8 @@
 :root{
   --color-background: #F1F2F2;
   --color-foreground: #C14420;   /* 內文本色 */
-  --font-main: 'Merriweather', serif;        /* 正文 */
-  --font-heading: 'Playfair Display', serif; /* 標題 */
+  --font-main: 'Inter', sans-serif;      /* 正文 */
+  --font-heading: 'Poppins', sans-serif; /* 標題 */
   --content-width: 826px;
 
   --heading-color: #233B5E;      /* 標題與導覽靛藍 */
