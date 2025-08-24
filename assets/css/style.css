@@ -183,24 +183,19 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 .post p.drop-cap{ margin-top: .25rem; } /* 與 Drop Cap 相容的小距離 避免貼太近 */
 
 
+/* 目錄條（左邊細線） */
+.tax-list{ list-style:none; padding:0; margin:.5rem 0 2rem;
+  display:flex; flex-direction:column; gap:.4rem; }
+.tax-list li{ display:flex; align-items:baseline; gap:.5rem; }
+.tax-list a{
+  display:inline-block; padding-left:.6rem; border-left:2px solid rgba(0,0,0,.15);
+  color: var(--heading-color); text-decoration:none; font-weight:600;
+  transition: border-color .2s ease, color .2s ease;
+}
+.tax-list a:hover{ color: var(--accent); border-left-color: var(--accent); }
+.tax-list .count{ color:#9aa3ad; font-size:.9rem; }
 
-/* 分類索引 */
-.tax-list { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.75rem 1rem; margin:.5rem 0 2rem; }
-.tax-list li { display:flex; align-items:center; gap:.4rem; }
-.tax-list a {
-  background: var(--pill-bg);
-  color: var(--heading-color);
-  border-radius:999px;
-  padding:.4rem .9rem;
-  text-decoration:none;
-  border:1px solid var(--pill-border);
-}
-.tax-list a:hover {
-  background: var(--pill-bg-hover);
-  border-color: var(--pill-border-hover);
-  color: var(--heading-color);
-}
-.tax-list .count { font-size:.85rem; color:#999; }
+
 
 /* footer (全站最底) */
 footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid #ccc; }
