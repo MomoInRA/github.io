@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 建議把中文備援也放進 var(--font-main) */
 :root{
   /* 範例：Source Serif Pro + 中文備援 */
-  --font-main: 'Work Sans', 'Noto Serif TC', 'Noto Serif CJK TC', serif;
+  --font-main: 'Source Serif Pro', 'Noto Serif TC', 'Noto Serif CJK TC', serif;
 }
 /* 已有：
 body { font-family: var(--font-main); }
