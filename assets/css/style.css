@@ -104,7 +104,7 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 
 .navbar a:hover {
   color: #C14420;              /* 主色 */
-  transform: scale(1.08);      /* 微放大 */
+  transform: scale(1.15);      /* 微放大 */
 }
 
 .navbar a.active {
