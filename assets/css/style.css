@@ -73,7 +73,7 @@ header a:hover, .navbar a:hover { text-decoration: none; }
   top: 14px;                  /* 頂部留一點距離 */
   z-index: 100;
   backdrop-filter: blur(12px); /* 毛玻璃效果 */
-  background-color: rgba(255, 255, 255, 0.6); /* 半透明白 */
+  background-color: rgba(255, 255, 255, 0.4); /* 半透明白 */
   border-radius: 999px;        /* 膠囊形狀 */
   padding: 0.6rem 1.2rem;
   margin: 0 auto 2.5rem;       /* 底部留白 */
