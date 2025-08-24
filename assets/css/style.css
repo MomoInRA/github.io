@@ -3,7 +3,8 @@
 :root{
   --color-background: #F1F2F2;
   --color-foreground: #C14420;   /* 內文本色 */
-  --font-main: 'Work Sans', sans-serif;
+  --font-main: 'Merriweather', serif;   /* 正文 */
+  --font-heading: 'Inter', sans-serif;  /* 標題 */
   --content-width: 826px;
 
   --heading-color: #233B5E;      /* 標題與導覽靛藍 */
