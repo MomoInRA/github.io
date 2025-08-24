@@ -254,7 +254,7 @@ hr {
 
 /* 文章頁的標題（單篇文章）修正字型大小 */
 .post h1 {
-  font-size: 1.8rem;       /* 調整成 2rem，比 2.5rem 小一點 */
+  font-size: 2rem;       /* 調整成 2rem，比 2.5rem 小一點 */
   line-height: 1.2;       /* 緊緻一點，提高閱讀性 */
   margin-bottom: 0.6rem;  /* 標題與內文之間稍微留空間 */
   color: var(--heading-color);
