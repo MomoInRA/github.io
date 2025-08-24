@@ -289,3 +289,64 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
 }
 
+/* 啟用條件：容器帶有 .dropcap-auto 才會啟用，自行可用 .no-dropcap 關閉 */
+.post-body.no-dropcap { --dc-enable: 0; }
+.post-body.dropcap-auto { --dc-enable: 1; }
+
+/* 基本樣式（英文預設） */
+.post-body.dropcap-auto > p:first-child::first-letter {
+  /* 只有「第一個子元素就是 <p>」才會生效
+     → 若第一個是 ul/ol/blockquote/img/figure/code 等，就不會套用
+  */
+  float: left;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  line-height: 1;
+  margin: .06em .28rem 0 0;           /* 上、右、下、左 */
+  font-weight: 700;
+  color: var(--heading-color);
+  /* 開關（可用 no-dropcap 關閉）*/
+  content: var(--dc-enable);
+}
+.post-body.dropcap-auto > p:first-child {
+  /* 避免第一行太擠，給一點下緣空隙 */
+  margin-top: .15rem;
+}
+
+/* --- 自動「跳過」清單 / 引言 / 圖片等情境（第一個不是 <p> 就不套） --- */
+/* 不需要額外寫規則，因為我們用了 > p:first-child 才會生效：
+   若第一個元素是 ul/ol/blockquote/figure/img/pre/code，drop cap 自然不會套到。
+*/
+
+/* --- 繁中/簡中調校：中文比英文字寬，空隙多一點 --- */
+/* 只要 <html lang="zh">、"zh-Hant"、"zh-Hans" 或文章區塊有 lang，就會吃到 */
+.post-body:lang(zh), .post-body:lang(zh-Hant), .post-body:lang(zh-Hans) {
+  --dc-mr: .38rem;
+}
+.post-body:lang(zh) > p:first-child::first-letter,
+.post-body:lang(zh-Hant) > p:first-child::first-letter,
+.post-body:lang(zh-Hans) > p:first-child::first-letter {
+  margin-right: var(--dc-mr, .36rem);
+  line-height: 1; /* 中文首字通常更方正，保守一些 */
+  /* 內文字體若是 serif，更像出版物 */
+}
+
+/* --- 字體備援：內文 serif、標題保留你既有設定 --- */
+/* 建議把中文備援也放進 var(--font-main) */
+:root{
+  /* 範例：Source Serif Pro + 中文備援 */
+  --font-main: 'Source Serif Pro', 'Noto Serif TC', 'Noto Serif CJK TC', serif;
+}
+/* 已有：
+body { font-family: var(--font-main); }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
+*/
+
+/* --- 細節優化（避免首字被陰影或動畫影響） --- */
+.post-body > p:first-child::first-letter {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- 若首段是標點（「」‘ ’等）而非文字，可用這招略過 --- */
+/* 可選：若你偶爾用引號開頭且想略過，引號可單獨放 span.skip 並隱藏 */
+.post-body .skip { display: none; }
