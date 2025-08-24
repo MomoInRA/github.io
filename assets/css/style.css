@@ -107,21 +107,36 @@ header a:hover, .navbar a:hover { text-decoration: none; }
   transform: scale(1.15);      /* 微放大 */
 }
 
-.navbar a.active {
-  color: #C14420;
-  font-weight: 700;
+/* 放大鏡icon 讓左右分區 */
+.navbar{
+  position: sticky; top:14px; z-index:1000;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255,255,255,.6);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  padding: .6rem 1rem;
+  margin: 0 auto 2.5rem;
+  max-width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-left ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:1.25rem; align-items:center;
+}
+.nav-left li{ list-style:none; }
+
+.nav-right a img.icon{
+  width:20px; height:20px; display:inline-block; max-width:none;
+  vertical-align:middle;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-right a:hover img.icon{ transform: scale(1.12); opacity:.85; }
+
+@media (max-width:640px){
+  .navbar{ padding:.45rem .8rem; }
+  .nav-left ul{ gap:.9rem; }
 }
 
-.navbar a img.icon {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.navbar a:hover img.icon {
-  transform: scale(1.15);
-  opacity: 0.8;
-}
 
 
 
