@@ -259,5 +259,8 @@ hr {
   line-height: 1.2;       /* 緊緻一點，提高閱讀性 */
   margin-bottom: 0.6rem;  /* 標題與內文之間稍微留空間 */
   color: var(--heading-color);
+
 }
+body { font-family: var(--font-main); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
