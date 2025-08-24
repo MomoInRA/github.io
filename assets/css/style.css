@@ -3,8 +3,8 @@
 :root{
   --color-background: #F1F2F2;
   --color-foreground: #C14420;   /* 內文本色 */
-  --font-main: 'Merriweather', serif;   /* 正文 */
-  --font-heading: 'Inter', sans-serif;  /* 標題 */
+  --font-main: 'Merriweather', serif;        /* 正文 */
+  --font-heading: 'Playfair Display', serif; /* 標題 */
   --content-width: 826px;
 
   --heading-color: #233B5E;      /* 標題與導覽靛藍 */
@@ -261,6 +261,12 @@ hr {
   color: var(--heading-color);
 
 }
+
 body { font-family: var(--font-main); }
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--heading-color);
+}
 
