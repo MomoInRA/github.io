@@ -121,11 +121,37 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 }
 
 /* 文章頁封面 */
-.post-hero { margin:1rem 0 1.25rem; border-radius:10px; overflow:hidden; }
-.post-hero img { width:100%; height:280px; object-fit:cover; }
-@media (max-width:640px){ .post-hero img { height:200px; } }
+.post-hero {
+  margin: 2rem 0 2.5rem;   /* 上方 2rem，下方 2.5rem */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.post-hero img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+@media (max-width: 640px) {
+  .post-hero {
+    margin: 1.5rem 0 2rem;     /* 首圖上下留白縮小一點 */
+  }
+  .post-hero img {
+    height: 200px;             /* 手機版圖片高度維持原本設定 */
+  }
+  .post-body {
+    margin-top: 1.5rem;        /* 內文上下留白也縮小一點 */
+    margin-bottom: 1.5rem;
+  }
+}
 
-/* 文章內 H2 細上線（更克制、論文感） */
+/* 內文區塊與前後留白 */
+.post-body {
+  margin-top: 2rem;   /* 內文和首圖之間拉開距離 */
+  margin-bottom: 2rem;
+}
+
+
+/* 文章內 H2 細下線（更克制、論文感） */
 .post h2{
   border: none; padding: 0; position: relative;
   margin: 2.25rem 0 1.1rem;
