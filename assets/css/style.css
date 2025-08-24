@@ -67,42 +67,44 @@ header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
 /* 不要 header/nav 的預設底線 */
 header a:hover, .navbar a:hover { text-decoration: none; }
 
-/* 導覽列（小圓點指示版本） */
-.navbar{
-  position: sticky; top: 14px; z-index: 100; /* 往下留距 */
-  backdrop-filter: blur(6px);
-  background-color: rgba(241,242,242,.85);
-  text-align: center; margin-bottom: 2rem;
-  padding: .5rem 0;
+/* ==== 導覽列：玻璃膠囊風格 ==== */
+.navbar {
+  position: sticky;
+  top: 14px;                  /* 頂部留一點距離 */
+  z-index: 100;
+  backdrop-filter: blur(12px); /* 毛玻璃效果 */
+  background-color: rgba(255, 255, 255, 0.6); /* 半透明白 */
+  border-radius: 999px;        /* 膠囊形狀 */
+  padding: 0.6rem 1.2rem;
+  margin: 0 auto 2.5rem;       /* 底部留白 */
+  max-width: fit-content;      /* 只包住內容，不要整條佔滿 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 輕陰影漂浮感 */
 }
-.navbar ul{
-  list-style:none; padding:0; margin:1rem 0 2rem;
-  display:flex; flex-wrap:wrap;
-  gap:.75rem 1.25rem; justify-content:center;
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;               /* 選項間距 */
+  justify-content: center;
 }
-.navbar li{ list-style:none; }
-.navbar a{
-  background:none; border:none; border-radius:0; box-shadow:none;
+
+.navbar li { list-style: none; }
+
+.navbar a {
   color: var(--heading-color);
-  padding:.7rem .9rem .9rem;
-  position:relative; text-decoration:none;
-  transition: color .2s ease;
-  font-weight: 700;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
-.navbar a::after{
-  content:"";
-  position:absolute; left:50%; bottom:-8px;
-  width:7px; height:7px;
-  background: currentColor;
-  border-radius:50%;
-  transform: translateX(-50%) scale(0);
-  transition: transform .2s ease;
-}
-.navbar a:hover{ color: var(--accent); }
-.navbar a:hover::after{ transform: translateX(-50%) scale(1); }
-.navbar a.active{ color: var(--accent); }
-.navbar a.active::after{ transform: translateX(-50%) scale(1); }
-.navbar a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+.navbar a:hover {
+  color: #C14420;
+
 
 /* 文章列表 */
 .post-list { list-style:none; padding:0; margin:0; }
