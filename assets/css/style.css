@@ -230,8 +230,7 @@ footer { text-align:center; margin-top:4rem; padding:1rem; border-top:1px solid 
 .author-card__links a:hover img.icon {
   transform: scale(1.15);   /* hover 微放大 */
   opacity: 0.85;            /* hover 微透明 */
-  filter: invert(17%) sepia(23%) saturate(956%) hue-rotate(182deg) brightness(92%) contrast(93%);
-  /* hover 染成 #233B5E */
+
 }
 
 /* 文章日期：灰色小字 */
