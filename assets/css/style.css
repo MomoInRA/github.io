@@ -112,6 +112,18 @@ header a:hover, .navbar a:hover { text-decoration: none; }
   font-weight: 700;
 }
 
+.navbar a img.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.navbar a:hover img.icon {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+
 
 
 /* 文章列表 */
