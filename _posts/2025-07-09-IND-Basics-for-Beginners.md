@@ -19,6 +19,8 @@ What I learned in the Biomedical Regulatory Affairs Program: IND, Investigationa
 ## Okay, I’m going to file an IND. But when exactly?
 Short answer: After preclinical studies, before you initiate your investigation on first human subject
 
+---
+
 ## Do I Qualify for an IND Exemption?
 Filing an IND can be a tedious process, I totally understand. But if your clinical investigation uses **a marketed drug in the US**, there’s a good chance you may be exempt from submitting an IND, if the following criteria are all met:
 
@@ -34,6 +36,8 @@ And your investigation **must**:
 - Follow IRB approval and informed consent requirements (21 CFR 50 & 56).
 - Comply with the FDA’s rules against promotion of investigational drugs (21 CFR 312.7).
 *→ In other words, if your investigation is for academic or non-commercial research, and it does not involve any changes to the indication, dosage, route of administration, or target population, and does not introduce additional risk, you may qualify for an IND exemption.*
+
+---
 
 ## I think my case is exempt from IND, now what?
 Generally, the sponsor can assess whether their study qualifies for an IND exemption.
@@ -57,6 +61,8 @@ However, if you’re unsure, **ASK!!**
 - All human studies must be reviewed by an IRB, regardless of IND exemption status.
 - The IRB can assist in evaluating exemption eligibility, but only the FDA has the final authority.
 
+---
+
 ### Not just any IND, you have to submit the right type:
 
 **Commercial IND**
@@ -67,6 +73,8 @@ However, if you’re unsure, **ASK!!**
 **Expanded Access IND (also called “compassionate use”)**
 - For patients with serious or life-threatening conditions with out approved treatment options, an expanded access IND could make a new but unapproved drug available to them.
 - It generally is submitted by the physician.
+
+---
 
 ## What to submit? let me introduce you “IND package”
 - FDA 1571: the main document of IND
@@ -84,6 +92,8 @@ However, if you’re unsure, **ASK!!**
 (Form 1572):
   – Commercial IND → not required at submission, but often collected later for inspection
   – Non-commercial IND → required to initiate the IND
+
+---
 
 ## IND format
 ### eCTD
