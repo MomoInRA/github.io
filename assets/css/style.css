@@ -103,7 +103,15 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 }
 
 .navbar a:hover {
+  color: #C14420;              /* 主色 */
+  transform: scale(1.08);      /* 微放大 */
+}
+
+.navbar a.active {
   color: #C14420;
+  font-weight: 700;
+}
+
 
 
 /* 文章列表 */
