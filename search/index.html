@@ -1,0 +1,24 @@
+---
+layout: default
+title: Search
+---
+
+<section class="search-page">
+  <h1>Search</h1>
+
+  <input id="search-input" type="search" placeholder="Type to search…" aria-label="Search">
+  <ul id="results-container"></ul>
+</section>
+
+<!-- 載入簡易搜尋腳本（前端） -->
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ "/search.json" | relative_url }}',
+    searchResultTemplate: '<li><a href="{url}">{title}</a> <span class="date">{date}</span></li>',
+    noResultsText: '<li>No results</li>',
+    fuzzy: true
+  })
+</script>
