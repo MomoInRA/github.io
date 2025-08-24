@@ -24,8 +24,17 @@
       </a>
     </li>
     <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url contains 'about' %}active{% endif %}">About</a></li>
+
+    <!-- 新增搜尋連結 -->
+    <li>
+      <a href="{{ '/search/' | relative_url }}"
+         class="{% if page.url contains '/search/' %}active{% endif %}">
+        🔎 Search
+      </a>
+    </li>
   </ul>
 </nav>
+
 
 
 
