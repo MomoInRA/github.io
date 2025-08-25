@@ -68,7 +68,7 @@ header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
 header a:hover, .navbar a:hover { text-decoration: none; }
 
 
-/* ==== Navbar｜玻璃膠囊 + 左右分區（修復版） ==== */
+/* ==== Navbar｜玻璃膠囊 + 左右分區（最小修復版） ==== */
 .navbar{
   position: sticky; top: 14px; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
@@ -79,14 +79,14 @@ header a:hover, .navbar a:hover { text-decoration: none; }
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 
-  /* 關鍵：要有寬度，左右才能分散；和版心同寬 */
+  /* 與版心同寬，置中 */
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto 2.5rem;
   padding: .55rem .9rem;
 }
 
-/* 左側清單 */
+/* 左邊清單 */
 .nav-left ul{
   list-style: none; margin: 0; padding: 0;
   display: flex; align-items: center; gap: 1.1rem;
@@ -106,21 +106,21 @@ header a:hover, .navbar a:hover { text-decoration: none; }
 }
 .nav-left a.active{
   color: var(--accent); font-weight: 700;
-  background: rgba(193,68,32,.10); /* #C14420 的淡底 */
+  background: rgba(193,68,32,.10);
 }
 
-/* 右側放大鏡（覆蓋全站 img 的 block/max-width） */
+/* 右邊放大鏡（覆蓋全站 img 的 block/max-width） */
 .nav-right a{ display:inline-block; padding: .25rem; border-radius: 8px; }
 .nav-right a:hover{ background: rgba(0,0,0,.04); }
 .nav-right a img.icon{
   width: 20px; height: 20px;
-  display: inline-block; max-width: none;  /* ← 很重要 */
+  display: inline-block; max-width: none;
   vertical-align: middle;
   transition: transform .2s ease, opacity .2s ease;
 }
 .nav-right a:hover img.icon{ transform: scale(1.12); opacity: .85; }
 
-/* 避免 hover 出現多餘底線（你原本有這條也可以保留） */
+/* 避免 hover 的底線樣式亂入（保留你原本的慣性） */
 header a:hover, .navbar a:hover { text-decoration: none; }
 
 /* 行動版微調 */
@@ -128,6 +128,7 @@ header a:hover, .navbar a:hover { text-decoration: none; }
   .navbar{ padding: .45rem .7rem; }
   .nav-left ul{ gap: .85rem; }
 }
+
 
 
 
