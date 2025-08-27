@@ -68,66 +68,73 @@ header .subtitle { font-size: 1.1rem; color:#666; margin-top:.5rem; }
 header a:hover, .navbar a:hover { text-decoration: none; }
 
 
-/* ==== Navbar｜玻璃膠囊 + 左右分區（最小修復版） ==== */
-.navbar{
-  position: sticky; top: 14px; z-index: 1000;
-  display: flex; align-items: center; justify-content: space-between;
-
-  /* 玻璃膠囊外觀 */
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255,255,255,0.6);
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-
-  /* 與版心同寬，置中 */
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto 2.5rem;
-  padding: .55rem .9rem;
+/* ==== 導覽列：玻璃膠囊風格 ==== */
+.navbar {
+  position: sticky;
+  top: 14px;                  /* 頂部留一點距離 */
+  z-index: 100;
+  backdrop-filter: blur(12px); /* 毛玻璃效果 */
+  background-color: rgba(255, 255, 255, 0.6); /* 半透明白 */
+  border-radius: 999px;        /* 膠囊形狀 */
+  padding: 0.6rem 1.2rem;
+  margin: 0 auto 2.5rem;       /* 底部留白 */
+  max-width: fit-content;      /* 只包住內容，不要整條佔滿 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 輕陰影漂浮感 */
 }
 
-/* 左邊清單 */
-.nav-left ul{
-  list-style: none; margin: 0; padding: 0;
-  display: flex; align-items: center; gap: 1.1rem;
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;               /* 選項間距 */
+  justify-content: center;
 }
-.nav-left li{ list-style: none; }
-.nav-left a{
+
+.navbar li { list-style: none; }
+
+.navbar a {
   color: var(--heading-color);
-  font-weight: 600; font-size: 1rem;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  border-radius: 6px;
   text-decoration: none;
-  padding: .35rem .5rem; border-radius: 8px;
-  transition: color .22s ease, transform .22s ease, background-color .22s ease;
-}
-.nav-left a:hover{
-  color: var(--accent);
-  transform: scale(1.06);
-  background: rgba(0,0,0,.04);
-}
-.nav-left a.active{
-  color: var(--accent); font-weight: 700;
-  background: rgba(193,68,32,.10);
+  transition: all 0.25s ease;
 }
 
-/* 右邊放大鏡（覆蓋全站 img 的 block/max-width） */
-.nav-right a{ display:inline-block; padding: .25rem; border-radius: 8px; }
-.nav-right a:hover{ background: rgba(0,0,0,.04); }
-.nav-right a img.icon{
-  width: 20px; height: 20px;
-  display: inline-block; max-width: none;
-  vertical-align: middle;
+.navbar a:hover {
+  color: #C14420;              /* 主色 */
+  transform: scale(1.08);      /* 微放大 */
+}
+
+.navbar a.active {
+  color: #C14420;
+  font-weight: 700;
+}
+
+/* 外層容器：把膠囊放左邊、放大鏡放右邊 */
+.nav-wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  width:100%;
+  max-width: var(--content-width);   /* 和全站版心一致 */
+  margin: 0 auto 2.5rem;             /* 和原本 navbar 的底部留白一致 */
+  padding: 0 .1rem;                   /* 微 padding，避免貼邊（可調或拿掉） */
+}
+
+/* 搜尋 icon：覆蓋全站 img 規則，固定大小 */
+.nav-search .icon{
+  width:20px; height:20px;
+  display:inline-block; max-width:none;      /* 很重要：避免被 img{max-width:100%} 撐大 */
+  vertical-align:middle;
   transition: transform .2s ease, opacity .2s ease;
 }
-.nav-right a:hover img.icon{ transform: scale(1.12); opacity: .85; }
+.nav-search:hover .icon{ transform: scale(1.12); opacity:.85; }
 
-/* 避免 hover 的底線樣式亂入（保留你原本的慣性） */
-header a:hover, .navbar a:hover { text-decoration: none; }
-
-/* 行動版微調 */
 @media (max-width:640px){
-  .navbar{ padding: .45rem .7rem; }
-  .nav-left ul{ gap: .85rem; }
+  .nav-wrap{ margin: 0 auto 2rem; }
 }
+
 
 
 
