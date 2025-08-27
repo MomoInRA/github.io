@@ -14,10 +14,7 @@
         <p class="subtitle">法規初心者 Regulatory newbie 的日常搏鬥。求同行一起在 RA 黑森林裡組隊打怪！</p>
       </header>
 
-    <!-- 外層包一個 nav-wrap，做左右分布 -->
-<div class="nav-wrap">
-
-  <!-- 左邊：保留你的膠囊 navbar -->
+   <div class="nav-wrap">
   <nav class="navbar">
     <div class="nav-left">
       <ul>
@@ -34,17 +31,18 @@
             About
           </a>
         </li>
+        <!-- 這裡不要再有 Search 的 <li> 了 -->
       </ul>
     </div>
   </nav>
 
-  <!-- 右邊：獨立的搜尋 icon -->
   <div class="nav-right">
     <a href="{{ '/search/' | relative_url }}" aria-label="Search">
       <img src="{{ '/assets/images/search.svg' | relative_url }}" alt="Search" class="icon">
     </a>
   </div>
-  
+</div>
+
 
 
       {{ content }}
